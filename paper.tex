@@ -330,7 +330,7 @@ at each mass.
   \end{center}
   \caption{\label{fig:dists} The median values of the black hole mass
     distribution, $p(m|\theta)$, at various masses implied by the
-    posterior $p(\theta|d)$ for the models discussed in Subsections
+    posterior $p(\theta|d)$ for the models discussed in Sections
     \ref{subsec:parameteric-models} and
     \ref{subsec:non-parameteric-models}.  Error bars span the 10\% to
     90\% range.  Note that these ``distributions of distributions''
@@ -656,7 +656,7 @@ This quantity can be re-written in terms of the single-model evidence
 
 There are two broad ways to compare models in the context of the MCMC
 analysis of Section \ref{sec:models}.  The first way, which we discuss
-in Subsection \ref{subsec:direct-evidence}, is to use the MCMC samples
+in Section \ref{subsec:direct-evidence}, is to use the MCMC samples
 from the various models to estimate the value of the integral in
 Equation \eqref{eq:model-evidence-def}.  The second way is to treat
 the model literally as a parameter in a second MCMC analysis.  One
@@ -664,7 +664,7 @@ then proposes jumps (see the discussion in Section \ref{sec:models})
 not only for the $\theta_i$ within a particular model, but from
 parameters $\theta_i$ in model $M_i$ to parameters $\theta_j$ in
 $M_j$.  This technique is called a ``reversible-jump MCMC''
-\citep{Green1995}; we discuss it in Subsection
+\citep{Green1995}; we discuss it in Section
 \ref{subsec:reversible-jump-mcmc}.
 
 \subsection{Direct Evidence Calculations}
@@ -757,14 +757,14 @@ in the error bars of Figure \ref{fig:direct-evidence}.
   \end{center}
   \caption{\label{fig:direct-evidence} Direct integration and harmonic
     mean evidence for the various models from Section \ref{sec:models}
-    (see Subsection \ref{subsec:direct-evidence}).  In increasing
+    (see Section \ref{subsec:direct-evidence}).  In increasing
     order along the $x$-axis, the models are the power-law of
-    Subsubsection \ref{subsubsec:power-law} (PL), the decaying
-    exponential of Subsubsection \ref{subsubsec:exponential} (E), the
-    single Gaussian of Subsection \ref{subsubsec:gaussian} (G), the
-    double Gaussian of Subsubsection \ref{subsubsec:gaussian} (TG),
+    Section \ref{subsubsec:power-law} (PL), the decaying
+    exponential of Section \ref{subsubsec:exponential} (E), the
+    single Gaussian of Section \ref{subsubsec:gaussian} (G), the
+    double Gaussian of Section \ref{subsubsec:gaussian} (TG),
     and the one-, two-, three-, four-, and five-bin histogram models
-    of Subsection \ref{subsec:non-parameteric-models} (H1, H2, H3, H4,
+    of Section \ref{subsec:non-parameteric-models} (H1, H2, H3, H4,
     H5, respectively).  The cross symbols give the value of the direct
     integration; the plus symbols give the harmonic mean estimator
     with bootstrap estimates of the 10\% and 90\% bounds on the
@@ -822,9 +822,10 @@ the posterior from each of the single-model MCMCs.
 We have performed a reversible-jump MCMC that jumps between all the
 models (both parameteric and non-parameteric) in Section
 \ref{sec:models}.  The counts for the number of samples in each model
-appear in Figure \ref{fig:rj}.  The most favored model is the power
-law from Subsubsection \ref{subsubsec:power-law}, followed by the one-
-and two-bin histograms from Subsection
+appear in Figure \ref{fig:rj}; relative probabilities of the models
+are given in Table \ref{tab:rj}.  The most favored model is the power
+law from Section \ref{subsubsec:power-law}, followed by the one-
+and two-bin histograms from Section
 \ref{subsec:non-parameteric-models}.  This confirms the results from
 the direct integration and harmonic mean evidence estimators in the
 last subsection.  Interestingly, the theoretical curve from
@@ -834,6 +835,42 @@ likely than the best-fit power law model, it is only 1.2 times less
 likely than the two best histogram models.  A choice of model prior
 that only slightly favored the exponential model over the
 non-parameteric histograms would put it in second place.
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{|l|r|}
+      \hline
+      Model & Relative Probability \\
+      \hline \hline
+      Power Law (Section \ref{subsubsec:power-law}) & 0.441660 \\
+      \hline
+      Histogram (1 Bin, Section \ref{subsec:non-parameteric-models}) &
+      0.143435 \\
+      \hline
+      Histogram (2 Bin, Section \ref{subsec:non-parameteric-models}) &
+      0.135854 \\
+      \hline 
+      Exponential (Section \ref{subsubsec:exponential}) & 0.112514 \\
+      \hline
+      Histogram (3 Bin, Section \ref{subsec:non-parameteric-models}) &
+      0.075592 \\
+      \hline
+      Histogram (4 Bin, Section \ref{subsec:non-parameteric-models}) &
+      0.038839 \\
+      \hline 
+      Gaussian (Section \ref{subsubsec:gaussian}) & 0.022999 \\ 
+      \hline
+      Histogram (5 Bin, Section \ref{subsec:non-parameteric-models}) &
+      0.021011 \\
+      \hline      
+      Two Gaussian (Section \ref{subsubsec:gaussian}) & 0.008096 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:rj} Relative probabilities of the various models
+    from Section \ref{sec:models} computed from reversible-jump
+    MCMC samples.}
+\end{table}
 
 Assuming that the reversible-jump MCMC has converged (and we have
 tested ours for convergence), the standard deviation on the number of
@@ -853,12 +890,12 @@ we consider the reversible-jump evidence results to be definitive.
   \end{center}
   \caption{\label{fig:rj} Counts of samples in the parameter space of
     each model from Section \ref{sec:models} in the reversible-jump
-    MCMC of Subsection \ref{subsec:reversible-jump-mcmc}.  The models
-    are the power law of Subsubsection \ref{subsubsec:power-law} (PL),
-    the exponential of Subsubsection \ref{subsubsec:exponential} (E),
-    the Gaussian (G) and two Gaussian (TG) models of Subsubsection
+    MCMC of Section \ref{subsec:reversible-jump-mcmc}.  The models
+    are the power law of Section \ref{subsubsec:power-law} (PL),
+    the exponential of Section \ref{subsubsec:exponential} (E),
+    the Gaussian (G) and two Gaussian (TG) models of Section
     \ref{subsubsec:gaussian}, and the one-, two-, three-, four-, and
-    five-bin histograms of Subsection
+    five-bin histograms of Section
     \ref{subsec:non-parameteric-models} (H1, H2, H3, H4, H5,
     respectively).  The number of counts in each model is proportional
     to the evidence for that model; therefore, the most favored model
