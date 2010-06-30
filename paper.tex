@@ -379,7 +379,7 @@ values of these parameters.  We use
 \begin{equation}
   p(\theta) = p(\{\Mmin, \Mmax, \alpha\}) = 
   \begin{cases}
-    \frac{1}{2} \frac{1}{40^2}\frac{1}{20} & 0 \leq \Mmin \leq \Mmax
+    2 \frac{1}{40^2}\frac{1}{20} & 0 \leq \Mmin \leq \Mmax
     \leq 40, \quad -12 \leq \alpha \leq 8 \\
     0 & \textnormal{otherwise}
   \end{cases},
@@ -442,7 +442,7 @@ with a minimum mass:
   p(m|\theta) = p(m|\{\Mmin, M_0\}) = 
   \begin{cases}
     \frac{e^{\frac{\Mmin}{M_0}}}{M_0} \exp \left[ - \frac{m}{M_0}
-    \right] & M_0 \leq m \\
+    \right] & \Mmin \leq m \\
     0 & \textnormal{otherwise}
   \end{cases}.
 \end{equation}
@@ -522,7 +522,7 @@ where we restrict $\mu_1 < \mu_2$ with our broad, flat prior:
 \begin{equation}
   p(\{\mu_1, \mu_2, \sigma_1, \sigma_2, \alpha\}) = 
   \begin{cases}
-    \frac{1}{2} \frac{1}{40^4} & 0 \leq \mu_1 \leq \mu_2 \leq 40,
+    2 \frac{1}{40^4} & 0 \leq \mu_1 \leq \mu_2 \leq 40,
     \quad 0 \leq \sigma_1, \sigma_2 \leq 40, \quad 0 \leq \alpha \leq
     1 \\
     0 & \textnormal{otherwise}
