@@ -15,7 +15,7 @@
 
 \title{The Mass Distribution of Stellar-Mass Black Holes}
 
-\author{Will M. Farr \and Niharika Sravan \and Ilya Mandel} 
+\author{Will M. Farr \and Niharika Sravan} 
 
 \affil{Northwestern University Center for Interdisciplinary
   Exploration and Research in Astrophysics\\2145 Sheridan Rd.,
@@ -31,13 +31,13 @@
 \email{andrew.cantrell@yale.edu, laura.kreidberg@yale.edu,
   charles.bailyn@yale.edu}
 
-\author{Vicky Kalogera} 
+\author{Ilya Mandel \and Vicky Kalogera} 
 
 \affil{Northwestern University Center for Interdisciplinary
   Exploration and Research in Astrophysics\\2145 Sheridan Rd.,
   Evanston, IL 60208}
 
- \email{vicky@northwestern.edu}
+ \email{ilyamandel@chgk.info, vicky@northwestern.edu}
 
 \begin{abstract}
   We perform a Bayesian analysis of the mass distribution of
@@ -121,14 +121,10 @@ leaving this for future work.
       \citet{Greiner2001} \\
       XTE J1118 & $N(6.44, 0.08)$ & $N(0.0264, 0.004)$ & $N(68, 2)$ &
       \citet{Gelino2008} \\ & & & & \citet{Harlaftis2005} \\
-      % Cyg X1 & $N(0.251, 0.007)$ & $N(2.778, 0.386)$ & $I(23, 38)$ &
-      % \citet{Gies2003} \\ 
       XTE J1650 & $N(2.73, 0.56)$ & $U(0, 0.5)$ & $I(50, 80)$ &
       \cite{Orosz2004} \\
       GRS 1009 & $N(3.17, 0.12)$ & $N(0.137, 0.015)$ & $I(37, 80)$ &
       \cite{Filippenko1999} \\
-      % M33 X7 & $N(0.46, 0.08)$ & $N(4.47, 0.61)$ & $N(74.6, 1)$ &
-      % \citet{Orosz2007} \\
       A0620 & $N(2.76, 0.036)$ & $N(0.06, 0.004)$ & $N(50.98, 0.87)$ &
       \citet{Cantrell2010} \\ & & & & \citet{Neilsen2008} \\
       GRO J0422 & $N(1.13, 0.09)$ & $U(0.076, 0.31)$ & $N(45, 2)$ &
@@ -152,7 +148,20 @@ leaving this for future work.
       \citet{Charles2006} \\
       GS 2000 & $N(5.01, 0.12)$ & $U(0.035, 0.053)$ & $I(43, 74)$ &
       \citet{Charles2006} \\
-      \hline
+      \hline \hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% High Mass Follows
+      Cyg X1 & $N(0.251, 0.007)$ & $N(2.778, 0.386)$ & $I(23, 38)$ &
+      \citet{Gies2003} \\ 
+      M33 X7 & $N(0.46, 0.08)$ & $N(4.47, 0.61)$ & $N(74.6, 1)$ &
+      \citet{Orosz2007} \\
+      NGC 300 X1 & $N(2.6, 0.3)$ & $U(1.05, 1.65)$ & $I(60, 75)$ &
+      \citet{Crowther2010} \\
+      LMC X1 & $N(0.148, 0.004)$ & $N(2.91, 0.49)$ & $N(36.38, 2.02)$
+      & \citet{Orosz2009} \\
+      IC 10 X1 & $N(7.64, 1.26)$ & $U(0.7, 1.7)$ & $I(75, 90)$ & 
+      \citet{Prestwich2007} \\
+       & & & & \citet{Silverman2008} \\
+       \hline
     \end{tabular}
   \end{center}
   \caption{\label{tab:sources} The source parameters for the 17 low
@@ -407,7 +416,8 @@ Equation \eqref{eq:likelihood-def}.  Figure \ref{fig:dists} presents
 the resulting distribution of mass distributions inferred from the
 MCMC distribution of parameters.
 
-In Figure \ref{fig:alpha}, we display a histogram of the resulting
+In %Figure \ref{fig:alpha}
+, we display a histogram of the resulting
 samples in $\alpha$; this represents the one-dimensional
 ``marginalized'' distribution
 \begin{equation}
@@ -425,19 +435,19 @@ mass is also quite interesting, but we defer this discussion until
 Section \ref{sec:minimum-mass}, where we discuss the distribution for
 the minimum black hole masses in the context of all our models.
 
-\begin{figure}
-  \begin{center}
-    \plotone{plots/alpha}
-  \end{center}
-  \caption{\label{fig:alpha} A histogram of the MCMC samples for
-    $\alpha$ from the power-law distribution defined in Equation
-    \eqref{eq:power-law-dist}.  The histogram is an approximation to
-    the one-dimensional marginalized PDF in Equation
-    \eqref{eq:alpha-pdf}.  The favored value is near $\alpha = -4$.
-    The fraction of the distribution with $\alpha < 0$ is 98.7\%.  The
-    5\% quantile is $-7.66$, the median is $-4.28$, and the 95\%
-    quantile is $-1.36$.}
-\end{figure}
+% \begin{figure}
+%   \begin{center}
+%     \plotone{plots/alpha}
+%   \end{center}
+%   \caption{\label{fig:alpha} A histogram of the MCMC samples for
+%     $\alpha$ from the power-law distribution defined in Equation
+%     \eqref{eq:power-law-dist}.  The histogram is an approximation to
+%     the one-dimensional marginalized PDF in Equation
+%     \eqref{eq:alpha-pdf}.  The favored value is near $\alpha = -4$.
+%     The fraction of the distribution with $\alpha < 0$ is 98.7\%.  The
+%     5\% quantile is $-7.66$, the median is $-4.28$, and the 95\%
+%     quantile is $-1.36$.}
+% \end{figure}
 
 \subsubsection{Decaying Exponential}
 \label{subsubsec:exponential}
@@ -464,23 +474,24 @@ We choose again a broad, flat prior
 \end{equation}
 with $\Mmin$ and $M_0$ measured in solar masses.
 
-Figure \ref{fig:exp-M0} displays the marginalized posterior
+%Figure \ref{fig:exp-M0}
+ displays the marginalized posterior
 distribution for the scale mass of the exponential, $M_0$.  The median
 scale mass is $M_0 = 3.00$, and $1.57 \leq M_0 \leq 5.71$ with 90\%
 confidence.  We defer discussion of the distribution of $\Mmin$ until
 Section \ref{sec:minimum-mass}.  Refer to Figure \ref{fig:dists}
 for the resulting shape of the distribution of distributions.
 
-\begin{figure}
-  \begin{center}
-    \plotone{plots/exp-M0}
-  \end{center}
-  \caption{\label{fig:exp-M0} The distribution of scale masses, $M_0$,
-    measured in units of a solar mass for the exponential underlying
-    mass distribution defined in Equation \eqref{eq:exp-def}.  The
-    median scale mass is $M_0 = 3.00$; with 90\% confidence $1.57 \leq
-    M_0 \leq 5.71$. }
-\end{figure}
+% \begin{figure}
+%   \begin{center}
+%     \plotone{plots/exp-M0}
+%   \end{center}
+%   \caption{\label{fig:exp-M0} The distribution of scale masses, $M_0$,
+%     measured in units of a solar mass for the exponential underlying
+%     mass distribution defined in Equation \eqref{eq:exp-def}.  The
+%     median scale mass is $M_0 = 3.00$; with 90\% confidence $1.57 \leq
+%     M_0 \leq 5.71$. }
+% \end{figure}
 
 \subsubsection{Gaussian and Two-Gaussian Models}
 \label{subsubsec:gaussian}
