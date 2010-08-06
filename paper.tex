@@ -1,6 +1,7 @@
 \documentclass[preprint]{aastex}
 
 \usepackage{hyperref}
+\usepackage{amssymb}
 \usepackage{amsmath}
 
 \newcommand{\fixme}[1]{[FIXME: #1]}
@@ -8,6 +9,7 @@
 \newcommand{\Mmin}{M_{\textnormal{min}}}
 \newcommand{\Mmax}{M_{\textnormal{max}}}
 \newcommand{\Nbin}{N_{\textnormal{bin}}}
+\newcommand{\vtheta}{\vec{\theta}}
 
 \bibliographystyle{hapj}
 
@@ -41,24 +43,27 @@
 
 \begin{abstract}
   We perform a Bayesian analysis of the mass distribution of
-  stellar-mass black holes based on the observed masses of the compact
-  object in 17 low mass X-ray binaries.  Modeling the mass
-  distribution both parametrically---as a power law, exponential,
-  gaussian, or combination of two gaussians---and
-  non-parametrically---as histograms with varying numbers of
-  bins---we explore the distribution in the context of Markov Chain
-  Monte Carlo calculations of model parameters.  We give confidence
-  bounds on the shape of the mass distribution in the context of each
-  model and compare the models with each other by calculating their
-  Bayesian evidence.  We address the existence of a ``gap'' between
+  stellar-mass black holes using the observed masses of 15 low-mass
+  X-ray binary systems and five higher-mass, wind-fed X-ray binary
+  systems.  Modeling the mass distribution both parametrically---as a
+  power law, exponential, gaussian, combination of two gaussians, or
+  log-normal distribution---and non-parametrically---as histograms
+  with varying numbers of bins---we explore the distribution in the
+  context of Markov Chain Monte Carlo calculations of model
+  parameters.  We give confidence bounds on the shape of the mass
+  distribution in the context of each model and compare the models
+  with each other by calculating their Bayesian evidence.  The mass
+  distribution of the low-mass systems is best fit by a power-law,
+  while the distribution of the complete sample is best fit by the
+  exponential model.  We address the existence of a ``gap'' between
   the most massive neutron stars and least massive black holes,
-  finding that the best model (the power law), the second-best model
-  (a one-bin histogram, or flat distribution), and the third-best
-  model (a two-bin histogram) have minimum black hole masses above
-  5.00, 3.23, and 3.82 solar masses (95\% confidence), respectively.
-  We therefore conclude that our sample of black hole masses provides
-  strong evidence of a gap between the maximum neutron star mass and
-  minimum black hole mass.
+  finding that the best model (the power law) fitted to the low-mass
+  systems only gives a minimum black-hole mass of 4.7 $\Msun$ (90\%
+  confidence), while the best model (the exponential) fitted to all 20
+  systems gives a minumum black-hole mass of 4.4 $\Msun$ (90\%
+  confidence).  We conclude that our sample of black hole masses
+  provides strong evidence of a gap between the maximum neutron star
+  mass and minimum black hole mass.
 \end{abstract}
 
 \maketitle
@@ -69,12 +74,23 @@
 \section{Systems}
 \label{sec:systems}
 
-The 17 low mass X-ray binary systems on which this study is based are
-listed in Table \ref{tab:sources}.  In each of these systems,
-spectroscopic measurements of the secondary star provide an orbital
-period for the system and a half-amplitude for the secondary's
-velocity curve.  These measurements can be combined into the mass
-function,
+The 20 X-ray binary systems on which this study is based are listed in
+Table \ref{tab:sources}.  We separate the systems into 15 low-mass
+systems in which the central black hole appears to be fed by
+roche-lobe overflow from the secondary, and 5 higher-mass systems in
+which the black hole is fed via winds (these systems all have a
+secondary that appears more massive than the black hole).  The low-
+and higher-mass systems undoubtedly have different evolutionary
+tracks, and therefore it is reasonable that they would have different
+black-hole mass distributions.  We will first analyze the 15 low-mass
+systems alone (Sections \ref{sec:models} and
+\ref{sec:model-selection}), and then the complete sample of 20 systems
+(Section \ref{sec:higher-mass}).
+
+In each of these systems, spectroscopic measurements of the secondary
+star provide an orbital period for the system and a half-amplitude for
+the secondary's velocity curve.  These measurements can be combined
+into the mass function,
 \begin{equation}
   \label{eq:mass-function}
   f(M) = \frac{P K^3}{2\pi G} = \frac{M \sin^3 i}{\left( 1 + q \right)^2},
@@ -86,15 +102,17 @@ the system, and $q \equiv M_2 / M$ is the mass ratio of the system.
 The mass function defines a lower limit on the mass: $f(M) < M$.  To
 accurately determine the mass of the black hole, the inclination $i$
 and mass ratio $q$ must be measured.  Ideally, this can be
-accomplished by fitting ellipsoidal light curves from these systems
-but even in the ideal case (see, e.g., \citet{Cantrell2010} on A0620)
-this procedure can be complicated by possible contributions from an
-accretion disk and hot spots in the disk.  For some systems (e.g.\ GS
-1354 \citep{Casares2009}) strong variability prevents determination of
-the inclination from the lightcurve at all; in these cases an upper
-limit on the inclination often comes from the observed lack of
-eclipses in the lightcurve.  In general, accurately determining $q$
-and $i$ requires a careful system-by-system analysis.
+accomplished by fitting ellipsoidal light curves and study of the
+rotational broadening of spectral lines from the secondary, but even
+in the ideal case (see, e.g., \citet{Cantrell2010} on A0620) this
+procedure is complicated.  In particular, contributions from an
+accretion disk and hot spots in the disk can significantly distort the
+measured inclination and mass ratios.  For some systems (e.g.\ GS 1354
+\citep{Casares2009}) strong variability prevents determination of the
+inclination from the lightcurve at all; in these cases an upper limit
+on the inclination often comes from the observed lack of eclipses in
+the lightcurve.  In general, accurately determining $q$ and $i$
+requires a careful system-by-system analysis.
 
 For the purposes of this paper, we adopt the following simplified
 approach to the estimation of the black hole mass from the observed
@@ -108,8 +126,11 @@ uniformly (for the mass ratio) or isotropically (for the inclination)
 within the quoted range.  Table \ref{tab:sources} gives the assumed
 distribution for the observables in the 17 systems we use.  We do not
 attempt to deal with the systematic biases in the observational
-determination of $f$, $q$, and $i$ in any realistic way, instead
-leaving this for future work.
+determination of $f$, $q$, and $i$ in any realistic way; we are
+currently investigating more realistic treatments of the errors
+(including observational biases that can shift the peak of the true
+mass distribution away from the ``best-fit'' mass in the
+observations).  This careful treatment will appear in future work.
 
 \begin{table}
   \begin{center}
@@ -164,8 +185,12 @@ leaving this for future work.
        \hline
     \end{tabular}
   \end{center}
-  \caption{\label{tab:sources} The source parameters for the 17 low
-    mass X-ray binaries used in this work.  $f$ is the mass function for
+  \caption{\label{tab:sources} The source parameters for the 20 low
+    mass X-ray binaries used in this work.  The first 15 systems have
+    low-mass secondaries that feed the black hole via Roche lobe
+    overflow; the last five systems have high-mass secondaries ($q
+    \gtrsim 1$) that feed the black hole via winds.  In each line, $f$
+    is the mass function for
     the compact object, $q$ is the mass ratio $M_2/M$, and $i$ is the
     inclination of the system to the line of sight.  We indicate the
     distribution used for the true parameters when computing the
@@ -173,8 +198,7 @@ leaving this for future work.
     $N(\mu,\sigma)$ implies a Gaussian with mean $\mu$ and standard
     deviation $\sigma$, $U(a,b)$ is a uniform distribution between $a$ and
     $b$, and $I(\alpha,\beta)$ is an isotropic distribution between the
-    angles $\alpha$ and $\beta$.  \fixme{Orosz for XTE J1550 needs a
-      real reference \citep{Orosz2010}.}} 
+    angles $\alpha$ and $\beta$.}
 \end{table}
 
 From these assumptions, we can generate probability distributions for
@@ -183,99 +207,120 @@ the Monte Carlo method: drawing samples of $f$, $q$, and $i$ from the
 assumed distributions and computing the mass implied by Equation
 \eqref{eq:mass-function} gives samples of $M$ from the distribution
 induced by the relationship in Equation \eqref{eq:mass-function}.
-Mass distributions generated in this way for the 17 systems used in
-this work are shown in Figure \ref{fig:all-masses}.  These mass
-distributions constitute the ``observational data'' we will use in
-Section \ref{sec:models} to explore various underlying mass
-distributions.
+Mass distributions generated in this way for the systems used in this
+work are shown in Figure \ref{fig:low-masses} and Figure
+\ref{fig:high-masses}.  Note that systems for which $i$ is poorly
+constrained have broad ``tails'' on their mass distributions.  These
+mass distributions constitute the ``observational data'' we will use
+in the remainder of this paper.
 
 \begin{figure}
   \begin{center}
     \plotone{plots/all-masses} 
   \end{center}
 
-  \caption{\label{fig:all-masses} The mass distributions implied by
+  \caption{\label{fig:low-masses} The mass distributions implied by
     Equation \eqref{eq:mass-function} and the assumed distributions on
-    observational parameters given in Table \ref{tab:sources}.  The
-    significant asymmetry and long tails in many of these
+    observational parameters given in Table \ref{tab:sources} for the
+    lower-mass sources.  The significant asymmetry and long tails in
+    many of these distributions are the result of the non-linear
+    relationship (Equation \eqref{eq:mass-function}) between $M$, $f$,
+    $q$, and $i$.}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \plotone{plots/high-masses}
+  \end{center}
+  \caption{\label{fig:high-masses} Mass distributions for the
+    wind-fed, higher-mass systems computed from the distributions on
+    observed data in Table \ref{tab:sources} using Equation
+    \eqref{eq:mass-function}.  The asymmetry and long tails in these
     distributions are the result of the non-linear relationship
-    (Equation \eqref{eq:mass-function}) between $M$, $f$, $q$, and
-    $i$.}
+    between $M$, $f$, $q$, and $i$.}
 \end{figure}
 
 In Figure \ref{fig:masses} we show the combination of these individual
-mass distributions into one single distribution.  (Note that this
+mass distributions into one single distribution.  Note that this
 combination is not a good estimator of the true mass distribution of
-black hole masses---see, e.g., \citet{Mandel2010}.  We include it here
-only to give a sense of the range of masses of black holes in our
-sample; we will come to estimators for the mass distribution.)
+black hole masses.  To understand why this is not a good estimator of
+the underlying mass distribution, suppose that the observations
+implied an identical mass distribution for each object.  Then the
+combined distribution is equal to the individual distributions, but in
+fact we can be confident that each of the objects was drawn from a
+distribution that was narrower by a factor of approximately
+$\sqrt{N}$.  \citet{Mandel2010} discusses this issue in detail.  We
+include Figure \ref{fig:masses} here only to give a sense of the range
+of masses of black holes in our sample; we will come to estimators for
+the mass distribution.
 
 \begin{figure}
-  \plotone{plots/masses}
+  \plotone{plots/masses-high}
 
-  \caption{\label{fig:masses} The mass distributions in Figure
-    \ref{fig:all-masses} combined into a single distribution. Note
-    that this combination is not a good estimator of the true mass
-    distribution of black hole masses in the galaxy---see, e.g.,
-    \citet{Mandel2010}.  We include it here only to give a sense of
-    the range and general shape of the mass distribution of black
-    holes in our sample.}
+  \caption{\label{fig:masses} The mass distributions in Figures
+    \ref{fig:low-masses} and \ref{fig:high-masses} combined into a
+    single distribution. Note that this combination is not a good
+    estimator of the true mass distribution of black hole masses in
+    the galaxy---see, e.g., \citet{Mandel2010}.  We include it here
+    only to give a sense of the range and general shape of the mass
+    distribution of black holes in our sample.}
 \end{figure}
 
 \section{Models}
 \label{sec:models}
 
 In this section we apply a Bayesian analysis to various models for the
-underlying mass distribution from which the systems in Table
-\ref{tab:sources} were drawn.  The end result will be the probability
-distribution for the parameters of each model implied by the data from
-Section \ref{sec:systems} in combination with our prior assumptions
-about the probability distribution for the parameters.  Bayes' rule
-relates these quantities.  For a model with parameters $\theta$ in the
-presence of data $d$, Bayes' rule states
+underlying mass distribution from which the low-mass systems in Table
+\ref{tab:sources} were drawn.  We will treat the combined low- and
+higher-mass systems in Section \ref{sec:higher-mass}.  The end result
+will be the probability distribution for the parameters of each model
+implied by the data from Section \ref{sec:systems} in combination with
+our prior assumptions about the probability distribution for the
+parameters.  Bayes' rule relates these quantities.  For a model with
+parameters $\vtheta$ in the presence of data $d$, Bayes' rule states
 \begin{equation}
   \label{eq:Bayes-rule}
-  p(\theta | d) = \frac{p(d | \theta) p(\theta)}{p(d)}.
+  p(\vtheta | d) = \frac{p(d | \vtheta) p(\vtheta)}{p(d)}.
 \end{equation}
-Here, $p(\theta|d)$, called the posterior probability distribution
-function, is the probability distribution for the parameters $\theta$
-implied by the data $d$; $p(d|\theta)$, called the likelihood, is the
+Here, $p(\vtheta|d)$, called the posterior probability distribution
+function, is the probability distribution for the parameters $\vtheta$
+implied by the data $d$; $p(d|\vtheta)$, called the likelihood, is the
 probability of observing data $d$ given that the model parameters are
-$\theta$; $p(\theta)$, called the prior, reflects our estimate of the
+$\vtheta$; $p(\vtheta)$, called the prior, reflects our estimate of the
 probability of the various model parameters in the absence of any
 data; and $p(d)$, called the evidence, is an overall normalizing
-constant ensuring that 
+constant ensuring that
 \begin{equation}
-  \int d\theta\, p(\theta|d) = 1,
+  \int d\theta\, p(\vtheta|d) = 1,
 \end{equation}
 whence
 \begin{equation}
   \label{eq:evidence-def}
-  p(d) = \int d\theta\, p(d|\theta) p(\theta).
+  p(d) = \int d\vtheta\, p(d|\vtheta) p(\vtheta).
 \end{equation}
 
 In our context, the data are the mass distributions given in Section
-\ref{sec:systems}: $d = \{ p_i(m)| i = 1, 2, \ldots, 17 \}$.  We
+\ref{sec:systems}: $d = \{ p_i(M)| i = 1, 2, \ldots, 17 \}$.  We
 assume that the measurements in Section \ref{sec:systems} are
 independent, so the complete likelihood is given by a product of the
 likelihoods for the individual measurements.  For a model with
-parameters $\theta$ that predicts a mass distribution $p(m|\theta)$
+parameters $\vtheta$ that predicts a mass distribution $p(M|\vtheta)$
 for black holes, we have
 \begin{equation}
   \label{eq:likelihood-def}
-  p(d|\theta) = \prod_i \int dm\, p_i(m) p(m|\theta).
+  p(d|\vtheta) = \prod_i \int dM\, p_i(M) p(M|\vtheta).
 \end{equation}
 That is, the likelihood of an observation is the average over the
-individual mass distribution implied by the observation, $p_i(m)$, of
+individual mass distribution implied by the observation, $p_i(M)$, of
 the probability for a black hole of that mass to exist according to
-the model of the mass distribution, $p(m | \theta)$.  We approximate
-the integrals as averages of $p(m|\theta)$ over the Monte Carlo mass
+the model of the mass distribution, $p(M | \vtheta)$.  We approximate
+the integrals as averages of $p(M|\vtheta)$ over the Monte Carlo mass
 samples drawn from the distributions in Table \ref{tab:sources} (also
-see Figure \ref{fig:all-masses}):
+see Figures \ref{fig:low-masses} and \ref{fig:high-masses}):
 \begin{equation}
-  p(d|\theta) \approx \prod_i \frac{1}{N_i} \sum_{j = 1}^{N_i} p(m_{ij} | \theta),
+  p(d|\vtheta) \approx \prod_i \frac{1}{N_i} \sum_{j = 1}^{N_i} p(M_{ij} | \vtheta),
 \end{equation}
-where $m_{ij}$ is the $j$th sample (out of a total $N_i$) from the
+where $M_{ij}$ is the $j$th sample (out of a total $N_i$) from the
 $i$th individual mass distribution.
 
 Our calculation of the likelihood of each observation does not include
@@ -283,61 +328,91 @@ any attempt to account for selection effects in the observations.  We
 simply assume (almost certainly incorrectly) that any black hole drawn
 from the underlying mass distribution is equally likely to be
 observed, leaving the analysis of selection effects to future work.
+(During the preparation of this work, we became aware of
+\citet{Ozel2010}, which finds that selection effects do not greatly
+affect an analysis similar to ours.)
 
-For a mass distribution with several parameters, $p(\theta | d)$ lives
-in a multi-dimensional space.  Exploring the entirety of this space
-systematically rapidly becomes prohibitive as the number of parameters
-increases.  A more efficient way to explore the distribution $p(\theta
-| d)$ is to use a Markov Chain Monte Carlo (MCMC) method.  MCMC
-methods produce a chain (sequence) of parameter samples, $\{ \theta_i,
-i = 1, \ldots \}$, such that a particular parameter, $\theta$, appears
-in the sequence with a frequency equal to its probability according to
-$p(\theta|d)$.  In this way, regions of parameter space where
-$p(\theta|d)$ is large are sampled densely while regions where
-$p(\theta|d)$ is small are effectively ignored.  A Markov chain has
-the property that the transition probability from one element to the
-next, $p(\theta_i \to \theta_{i+1})$, depends only on the value of
-$\theta_i$, not on any previous values in the chain.
+For a mass distribution with several parameters, $p(\vtheta | d)$
+lives in a multi-dimensional space.  Exploring the entirety of this
+space systematically rapidly becomes prohibitive as the number of
+parameters increases.  A more efficient way to explore the
+distribution $p(\vtheta | d)$ is to use a Markov Chain Monte Carlo
+(MCMC) method.  MCMC methods produce a chain (sequence) of parameter
+samples, $\{ \vtheta_i, i = 1, \ldots \}$, such that a particular
+parameter set, $\vtheta$, appears in the sequence with a frequency
+equal to its probability according to $p(\vtheta|d)$.  In this way,
+regions of parameter space where $p(\vtheta|d)$ is large are sampled
+densely while regions where $p(\vtheta|d)$ is small are effectively
+ignored.  A Markov chain has the property that the transition
+probability from one element to the next, $p(\vtheta_i \to
+\vtheta_{i+1})$, depends only on the value of $\vtheta_i$, not on any
+previous values in the chain.
 
 One way to produce a sequence of MCMC samples is via the following
-algorithm, first proposed by \fixme{Metropolis citation needed}:
+algorithm, first proposed by \citet{Metropolis1953}:
 \begin{enumerate}
-  \item Begin with the current sample, $\theta_i$.
-  \item Propose a new sample, $\theta_p$, by drawing randomly from an
-    arbitrary ``jump proposal distribution'' with probability
-    $Q(\theta_i \to \theta_p)$.
+  \item Begin with the current sample, $\vtheta_i$.
+  \item Propose a new sample, $\vtheta_p$, by drawing randomly from a
+    ``jump proposal distribution'' with probability $Q(\vtheta_i \to
+    \vtheta_p)$.  Note that $Q(\vtheta_i \to \vtheta_p)$ can depend on
+    the current parameters, $\vtheta_i$, and any other ``constant''
+    data, but cannot examine the history of the chain beyond the most
+    recent point.  This is necessary to preserve the Markovian
+    property of the chain.
   \item Compute the ``acceptance'' probability,
     \begin{equation}
       \label{eq:paccept}
       p_{\textnormal{accept}} \equiv
-      \frac{p(\theta_p|d)}{p(\theta_i|d)} \frac{Q(\theta_p \to
-        \theta_i)}{Q(\theta_i \to \theta_p)}
+      \frac{p(\vtheta_p|d)}{p(\vtheta_i|d)} \frac{Q(\vtheta_p \to
+        \vtheta_i)}{Q(\vtheta_i \to \vtheta_p)}
     \end{equation}
-  \item With probability $\min(1,p_{\textnormal{accept}})$ set
-    $\theta_{i+1} = \theta_p$; otherwise set $\theta_{i+1} =
-    \theta_i$.
+  \item With probability $\min(1,p_{\textnormal{accept}})$ ``accept''
+    the propsed $\vtheta_p$, setting $\vtheta_{i+1} = \vtheta_p$;
+    otherwise set $\vtheta_{i+1} = \vtheta_i$.
 \end{enumerate}
-Note that this algorithm is more likely to accept a proposed jump when
-it increases the posterior (the first term in Equation
+This algorithm is more likely to accept a proposed jump when it
+increases the posterior (the first factor in Equation
 \eqref{eq:paccept}) and when it is to a location in parameter space
-from which it is easy to return (the second term in Equation
-\eqref{eq:paccept}).  As $i \to \infty$ the samples $\theta_i$ are
-distributed according to $p(\theta|d)$.  In practice the number of
-samples required before the chain appropriately samples $p(\theta|d)$
-depends strongly on the jump proposal distribution; proposal
-distributions that often propose jumps toward or within regions of
-large $p(\theta|d)$ can be very efficient, while poor proposal
-distributions can require prohibitively large numbers of samples
-before convergence.  
+from which it is easy to return (the second factor in Equation
+\eqref{eq:paccept}); the combination of these influences in Equation
+\eqref{eq:paccept} ensures that the equilibrium distribution of the
+chain is $p(\vtheta|d)$.  As $i \to \infty$ the samples $\vtheta_i$
+are distributed according to $p(\vtheta|d)$.  
 
-Once we have a chain of samples from $p(\theta|d)$---a distribution of
-distributions---the distribution for any quantity of interest can be
-computed.  For example, Figure \ref{fig:dists} shows the median
-values, and the 10\%, and 90\% quantiles for value of the BH mass
-probability distribution at various masses in each of the models
-discussed in the following subsections.  Such a figure can be
-generated from the MCMC output by computing the value of the
-parameterized BH mass distribution at various masses for each
+In practice the number of samples required before the chain
+appropriately samples $p(\vtheta|d)$ depends strongly on the jump
+proposal distribution; proposal distributions that often propose jumps
+toward or within regions of large $p(\vtheta|d)$ can be very
+efficient, while poor proposal distributions can require prohibitively
+large numbers of samples before convergence.  
+
+There is no foolproof test for the convergence of a chain.  In this
+work, we test the convergence of our chains by comparing the
+statistics calculated from the entire chain to statistics calculated
+from only the first half of the chain; when the chain has converged,
+the two calculations agree.  This is a necessary, but not sufficient,
+condition for convergence.
+
+We begin the chain at an arbitrary point in parameter space; this is
+equivalent to taking a finite section of an infinite chain that begins
+with the chosen point.  Since every point in parameter space occurs in
+an infinite chain, and no section of the chain is better than any
+other, our chosen finite chain will have the appropriate distribution.
+However, because consecutive samples in a chain are correlated with
+each other, the beginning of our finite chain has a ``memory'' of the
+starting point; we discard enough points at the beginning of the
+finite chain that we can be confident it does not retain a memory of
+the arbitrary starting point.  The points discarded in this way are
+commonly called ``burn-in'' points.
+
+Once we have a chain of samples from $p(\vtheta|d)$---a distribution
+of distributions---the distribution for any quantity of interest can
+be computed.  For example, Figure \ref{fig:dists} shows the median
+values, and the 10\% and 90\% quantiles for the value of the BH mass
+probability distribution at various masses.  (Recall that we are only
+using the 15 low-mass observations in this Section's analysis.)  Such
+a figure can be generated from the MCMC output by computing the value
+of the parameterized BH mass distribution at various masses for each
 parameter sample output by the MCMC, and then plotting the quantiles
 at each mass.
 
@@ -346,13 +421,16 @@ at each mass.
     \plottwo{plots/dist-parameteric}{plots/dist-non-parameteric}
   \end{center}
   \caption{\label{fig:dists} The median values of the black hole mass
-    distribution, $p(m|\theta)$, at various masses implied by the
+    distribution, $p(M|\theta)$, at various masses implied by the
     posterior $p(\theta|d)$ for the models discussed in Sections
     \ref{subsec:parameteric-models} and
-    \ref{subsec:non-parameteric-models}.  Error bars span the 10\% to
-    90\% range.  Note that these ``distributions of distributions''
-    are not necessarily normalized, and need not be ``shaped'' like
-    the underlying model distributions.}
+    \ref{subsec:non-parameteric-models}.  These distributions use only
+    the 15 low-mass observations in Table \ref{tab:sources} (the
+    complete sample is analyzed in Section \ref{sec:higher-mass}).
+    Error bars span the 10\% to 90\% range.  Note that these
+    ``distributions of distributions'' are not necessarily normalized,
+    and need not be ``shaped'' like the underlying model
+    distributions.}
 \end{figure}
 
 It is also common to look at the one-dimensional distribution for a
@@ -361,16 +439,51 @@ parameter space; this is approximated by a histogram of the MCMC
 sample values for that parameter.  Such a distribution is called the
 ``marginalized'' distribution.
 
-We defer discussion of the appropriateness of the different models
-given the data (i.e.\ the ``goodness of fit'') until Section
-\ref{sec:model-selection}.
+\subsection{Priors}
+
+An important part of any Bayesian analysis is the priors placed on the
+parameters of the model.  The choice of priors can bias the results of
+the analysis through both the shape and the range of prior support in
+parameter space.
+
+A prior that is independent of parameters, $\vtheta$, in some region,
+called ``flat,'' results in a posterior that is proportional to the
+likelihood (see Equation \eqref{eq:Bayes-rule}).  A flat prior does
+not change the shape of the posterior.  However, the choice of a flat
+prior is parameterization-dependent: a change of parameter from
+$\vtheta$ to $\vtheta' = \vec{f}(\vtheta)$ can change a flat
+distribution into one with non-trivial structure.  In this work, we
+choose priors that are flat when the parameters are measured in
+physical units.  In particular, for the log-normal model (Section
+\ref{sec:log-normal}) the natural parameters for the distribution are
+the mean, $\langle \log M \rangle$, and standard deviation,
+$\sigma_{\log M}$, in $\log M$, but we choose priors that are flat in
+$\langle M \rangle$ and $\sigma_M$.
+
+The range of prior support can also affect the results of a Bayesian
+analysis.  Because priors are normalized, prior support over a larger
+region of parameter space results in a smaller prior probability at
+each point.  Such ``wide'' priors are implicitly claiming that any
+particular sub-region of parameter space is less likely than it would
+be under a prior of the same shape but smaller support volume.  This
+difference is important in model selection (Section
+\ref{sec:model-selection}): when comparing two models with the same
+likelihood, one with wide priors will seem less probable than one with
+narrower priors.  Of course, priors should be wide enough to encompass
+all regions of parameter space that have significant likelihood.  To
+make the model comparison in Section \ref{sec:model-selection} fair,
+we choose prior support in parameter space so that the allowed
+parameter values for each model give distributions for which nearly
+all the probability lies in the range $0 \leq M \leq 40 \Msun$.
 
 \subsection{Parameteric Models for the Black Hole Mass Distribution}
 \label{subsec:parameteric-models}
 
 In this subsection, we discuss the various parameteric models of the
 underlying black hole mass distribution that we have analyzed using
-the data from Section \ref{sec:systems}.
+the low-mass data from Section \ref{sec:systems}.  (Analysis of these
+models including the higher-mass systems appears in Section
+\ref{sec:higher-mass}.)
 
 \subsubsection{Power-Law Models}
 \label{subsubsec:power-law}
@@ -379,9 +492,9 @@ Many astrophysical distributions are power-laws.  Let us assume that
 the BH mass distribution is given by
 \begin{equation}
   \label{eq:power-law-dist}
-  p(m|\theta) = p(m|\{\Mmin, \Mmax, \alpha \}) =
+  p(M|\vtheta) = p(M|\{\Mmin, \Mmax, \alpha \}) =
   \begin{cases}
-    A m^\alpha & \Mmin \leq m \leq \Mmax \\
+    A M^\alpha & \Mmin \leq m \leq \Mmax \\
     0 & \textnormal{otherwise}
   \end{cases}.
 \end{equation}
@@ -389,65 +502,62 @@ The normalizing constant $A$ is given by
 \begin{equation}
   A = \frac{1+\alpha}{\Mmax^{1+\alpha} - \Mmin^{1+\alpha}}.
 \end{equation}
-To perform the Bayesian analysis, we need to impose a prior on the
-parameters $\Mmin$, $\Mmax$, $\alpha$.  We choose to impose a broad
-prior that represents our significant uncertainty in the appropriate
-values of these parameters.  We use
+We choose uniform priors on $\Mmin$ and $\Mmax \geq \Mmin$ between 0 and
+$40 \Msun$, and uniform priors on the exponent $\alpha$ in a broad
+range between $-15$ and $13$:
 \begin{equation}
-  p(\theta) = p(\{\Mmin, \Mmax, \alpha\}) = 
+  p(\vtheta) = p(\{\Mmin, \Mmax, \alpha\}) = 
   \begin{cases}
-    2 \frac{1}{40^2}\frac{1}{20} & 0 \leq \Mmin \leq \Mmax
-    \leq 40, \quad -12 \leq \alpha \leq 8 \\
+    2 \frac{1}{40^2}\frac{1}{28} & 0 \leq \Mmin \leq \Mmax
+    \leq 40, \quad -15 \leq \alpha \leq 13 \\
     0 & \textnormal{otherwise}
-  \end{cases},
+  \end{cases}.
 \end{equation}
-where the masses are measured in solar masses.  This prior is uniform
-in the masses between 0 and $40 \Msun$, and uniform in power-law slope
-between $-12$ and $8$.
 
 Our MCMC analysis output is a list of $\{\Mmin, \Mmax, \alpha\}$
 values distributed according to the posterior 
 \begin{equation}
-  p(\theta|d) = p(\{\Mmin, \Mmax, \alpha\}|d) \propto p(d|\{\Mmin,
+  p(\vtheta|d) = p(\{\Mmin, \Mmax, \alpha\}|d) \propto p(d|\{\Mmin,
   \Mmax, \alpha\}) p(\{\Mmin, \Mmax, \alpha\}),
 \end{equation}
 with the likelihood $p(d|\{\Mmin, \Mmax, \alpha\})$ defined in
 Equation \eqref{eq:likelihood-def}.  Figure \ref{fig:dists} presents
 the resulting distribution of mass distributions inferred from the
-MCMC distribution of parameters.
+parameters output by the MCMC.
 
-In %Figure \ref{fig:alpha}
-, we display a histogram of the resulting
-samples in $\alpha$; this represents the one-dimensional
-``marginalized'' distribution
+In Figure \ref{fig:power-law} , we display a histogram of the resulting
+samples in each of the parameters $\Mmin$, $\Mmax$, and $\alpha$
+individually; this represents the one-dimensional ``marginalized''
+distribution
 \begin{equation}
   \label{eq:alpha-pdf}
-  p(\alpha|d) = \int d\Mmin\, d\Mmax\, p(\{\Mmin, \Mmax, \alpha\}|d).
+  p(\alpha|d) = \int d\Mmin\, d\Mmax\, p(\{\Mmin, \Mmax, \alpha\}|d),
 \end{equation}
-The resulting distribution is quite broad with 
+and similarly for $\Mmin$ and $\Mmax$.
+
+The marginalized distribution for $\alpha$ is broad, with
 \begin{equation}
-  -7.66 < \alpha < -1.36
+  -11.8 < \alpha < 6.8
 \end{equation}
-enclosing 90\% of the probability.  The median value is $\alpha =
--4.28$, and we have $\alpha < 0$ (a falling underlying mass
-distribution) at 98.7\% confidence.  The distribution of the minimum
+enclosing 90\% of the probability.  We have $p(\alpha < 0) = 0.6$.
+The median value is $\alpha = -3.35$.  The distribution of the minimum
 mass is also quite interesting, but we defer this discussion until
 Section \ref{sec:minimum-mass}, where we discuss the distribution for
 the minimum black hole masses in the context of all our models.
 
-% \begin{figure}
-%   \begin{center}
-%     \plotone{plots/alpha}
-%   \end{center}
-%   \caption{\label{fig:alpha} A histogram of the MCMC samples for
-%     $\alpha$ from the power-law distribution defined in Equation
-%     \eqref{eq:power-law-dist}.  The histogram is an approximation to
-%     the one-dimensional marginalized PDF in Equation
-%     \eqref{eq:alpha-pdf}.  The favored value is near $\alpha = -4$.
-%     The fraction of the distribution with $\alpha < 0$ is 98.7\%.  The
-%     5\% quantile is $-7.66$, the median is $-4.28$, and the 95\%
-%     quantile is $-1.36$.}
-% \end{figure}
+\begin{figure}
+  \begin{center}
+    \plotone{plots/power-law}
+  \end{center}
+  \caption{\label{fig:power-law} A histogram of the MCMC samples for
+    $\alpha$ from the power-law distribution defined in Equation
+    \eqref{eq:power-law-dist}.  The histogram is an approximation to
+    the one-dimensional marginalized PDF in Equation
+    \eqref{eq:alpha-pdf}.  The favored value is near $\alpha = -4$.
+    The fraction of the distribution with $\alpha < 0$ is 98.7\%.  The
+    5\% quantile is $-7.66$, the median is $-4.28$, and the 95\%
+    quantile is $-1.36$.}
+\end{figure}
 
 \subsubsection{Decaying Exponential}
 \label{subsubsec:exponential}
@@ -560,6 +670,9 @@ precisely how much redundancy we have in this model relative to the
 one-Gaussian model, but we should emphasize here that there is no
 evidence of a significant contribution from a second peak in the
 two-Gaussian model.
+
+\subsubsection{Log Normal}
+\label{sec:log-normal}
 
 \subsection{Non-Parameteric Models for the Black Hole Mass Distribution}
 \label{subsec:non-parameteric-models}
@@ -920,6 +1033,9 @@ we consider the reversible-jump evidence results to be definitive.
     to the evidence for that model; therefore, the most favored model
     is the power-law, followed by the one- and two-bin histogram.  }
 \end{figure}
+
+\section{Including High-Mass, Wind-Fed Systems}
+\label{sec:higher-mass}
 
 \section{The Minimum Mass of the Black Hole Mass Distribution}
 \label{sec:minimum-mass}
