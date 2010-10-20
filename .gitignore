@@ -6,3 +6,4 @@
 *.log
 *.out
 paper.pdf
+.DS_Store
