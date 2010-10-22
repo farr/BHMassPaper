@@ -46,23 +46,21 @@
   We perform a Bayesian analysis of the mass distribution of
   stellar-mass black holes using the observed masses of 15 low-mass
   X-ray binary systems undergoing Roche lobe overflow and five
-  higher-mass, wind-fed X-ray binary systems.  Modeling the mass
-  distribution both parametrically---as a power law, exponential,
-  gaussian, combination of two gaussians, or log-normal
-  distribution---and non-parametrically---as histograms with varying
-  numbers of bins---we explore the distribution in the context of
-  Markov Chain Monte Carlo calculations of model parameters.  We give
-  confidence bounds on the shape of the mass distribution in the
-  context of each model and compare the models with each other by
-  calculating their Bayesian evidence.  The mass distribution of the
-  low-mass systems is best fit by a power-law, while the distribution
-  of the complete sample is best fit by the exponential and power-law
-  models (but with significantly different parameters than the
-  lower-mass sample).  We address the existence of a ``gap'' between
-  the most massive neutron stars and least massive black holes,
-  finding that the best model (the power law) fitted to the low-mass
-  systems only gives a minimum black-hole mass of 4.3 $\Msun$ (90\%
-  confidence), while the best models (the exponential and power-law)
+  higher-mass, wind-fed X-ray binary systems.  Using MCMC
+  calculations, we model the mass distribution both
+  parametrically---as a power law, exponential, gaussian, combination
+  of two gaussians, or log-normal distribution---and
+  non-parametrically---as histograms with varying numbers of bins.  We
+  provide confidence bounds on the shape of the mass distribution in
+  the context of each model and compare the models with each other by
+  calculating their Bayesian evidence as supported by the
+  measurements.  The mass distribution of the low-mass systems is best
+  fit by a power-law, while the distribution of the complete sample is
+  best fit by the exponential model.  We examine the existence of a
+  ``gap'' between the most massive neutron stars and least massive
+  black holes, finding that the best model (the power law) fitted to
+  the low-mass systems only gives a minimum black-hole mass of 4.3
+  $\Msun$ (90\% confidence), while the best model (the exponential)
   fitted to all 20 systems gives a minumum black-hole mass of 4.5 and
   5.2 $\Msun$ (90\% confidence), respectively.  We conclude that our
   sample of black hole masses provides strong evidence of a gap
@@ -167,15 +165,15 @@ accurately determine the mass of the black hole, the inclination $i$
 and mass ratio $q$ must be measured.  Ideally, this can be
 accomplished by fitting ellipsoidal light curves and study of the
 rotational broadening of spectral lines from the secondary, but even
-in the ideal case (see, e.g., \citet{Cantrell2010} on A0620) this
-procedure is complicated.  In particular, contributions from an
+in the most studied case (see, e.g., \citet{Cantrell2010} on A0620)
+this procedure is complicated.  In particular, contributions from an
 accretion disk and hot spots in the disk can significantly distort the
 measured inclination and mass ratios.  For some systems (e.g.\ GS 1354
-\citep{Casares2009}) strong variability prevents determination of the
-inclination from the lightcurve at all; in these cases an upper limit
-on the inclination often comes from the observed lack of eclipses in
-the lightcurve.  In general, accurately determining $q$ and $i$
-requires a careful system-by-system analysis.
+\citep{Casares2009}) strong variability completely prevents
+determination of the inclination from the lightcurve; in these cases
+an upper limit on the inclination often comes from the observed lack
+of eclipses in the lightcurve.  In general, accurately determining $q$
+and $i$ requires a careful system-by-system analysis.
 
 For the purposes of this paper, we adopt the following simplified
 approach to the estimation of the black hole mass from the observed
@@ -303,45 +301,19 @@ in the remainder of this paper.
     between $M$, $f$, $q$, and $i$.}
 \end{figure}
 
-In Figure \ref{fig:masses} we show the combination of these individual
-mass distributions into one single distribution.  Note that this
-combination is not a good estimator of the true mass distribution of
-black hole masses.  To understand why this is not a good estimator of
-the underlying mass distribution, suppose that the observations
-implied an identical mass distribution for each object.  Then the
-combined distribution is equal to the individual distributions, but in
-fact we can be confident that each of the objects was drawn from a
-distribution that was narrower by a factor of approximately
-$\sqrt{N}$.  \citet{Mandel2010} discusses this issue in detail.  We
-include Figure \ref{fig:masses} here only to give a sense of the range
-of masses of black holes in our sample; we will come to estimators for
-the mass distribution.
-
-\begin{figure}
-  \plottwo{plots/masses}{plots/masses-high}
-
-  \caption{\label{fig:masses} The mass distributions in Figure
-    \ref{fig:low-masses} (left) and both \ref{fig:low-masses} and
-    \ref{fig:high-masses} (right) combined into a single
-    distribution. Note that this combination is not a good estimator
-    of the true mass distribution of black hole masses in the
-    galaxy---see, e.g., \citet{Mandel2010}.  We include it here only
-    to give a sense of the range and general shape of the mass
-    distribution of black holes in our sample.}
-\end{figure}
-
 \section{Models}
 \label{sec:models}
 
-In this section we apply a Bayesian analysis to various models for the
-underlying mass distribution from which the low-mass systems in Table
-\ref{tab:sources} were drawn.  We will treat the combined low- and
-higher-mass systems in Section \ref{sec:higher-mass}.  The end result
-will be the probability distribution for the parameters of each model
-implied by the data from Section \ref{sec:systems} in combination with
-our prior assumptions about the probability distribution for the
-parameters.  Bayes' rule relates these quantities.  For a model with
-parameters $\vtheta$ in the presence of data $d$, Bayes' rule states
+In this section we apply a statistical analysis to various models for
+the underlying mass distribution from which the low-mass systems in
+Table \ref{tab:sources} were drawn.  We will treat the combined low-
+and higher-mass systems in Section \ref{sec:higher-mass}.  The end
+result will be the probability distribution for the parameters of each
+model implied by the data from Section \ref{sec:systems} in
+combination with our prior assumptions about the probability
+distribution for the parameters.  Bayes' rule relates these
+quantities.  For a model with parameters $\vtheta$ in the presence of
+data $d$, Bayes' rule states
 \begin{equation}
   \label{eq:Bayes-rule}
   p(\vtheta | d) = \frac{p(d | \vtheta) p(\vtheta)}{p(d)}.
@@ -391,10 +363,7 @@ Our calculation of the likelihood of each observation does not include
 any attempt to account for selection effects in the observations.  We
 simply assume (almost certainly incorrectly) that any black hole drawn
 from the underlying mass distribution is equally likely to be
-observed, leaving the analysis of selection effects to future work.
-(During the preparation of this work, we became aware of
-\citet{Ozel2010}, which finds that selection effects do not greatly
-affect an analysis similar to ours.)
+observed.  (See also \citet{Ozel2010}.)
 
 For a mass distribution with several parameters, $p(\vtheta | d)$
 lives in a multi-dimensional space.  Exploring the entirety of this
@@ -679,12 +648,12 @@ The marginalized distribution for $\alpha$ is broad, with
 enclosing 90\% of the probability (excluding 5\% on each side).  We
 have $p(\alpha < 0) = 0.6$.  The median value is $\alpha = -3.35$.
 The broadness of the marginalized distribution for $\alpha$ comes from
-the need to match the relatively narrow peak in the mass distribution
-apparent in Figure \ref{fig:masses}.  When $\alpha$ is negative, the
-resulting mass distribution slopes down; $\Mmin$ is constrained to be
-near the lowest mass of the observed black holes, while $\Mmax$ is
-essentially irrelevant.  Conversely, when $\alpha$ is positive and the
-mass distribution slopes up, $\Mmax$ must be close to the largest mass
+the need to match the relatively narrow range in mass of the
+lower-mass systems.  When $\alpha$ is negative, the resulting mass
+distribution slopes down; $\Mmin$ is constrained to be near the lowest
+mass of the observed black holes, while $\Mmax$ is essentially
+irrelevant.  Conversely, when $\alpha$ is positive and the mass
+distribution slopes up, $\Mmax$ must be close to the largest mass
 observed, while $\Mmin$ is essentially irrelevant.  Figure
 \ref{fig:power-law-2D} illustrates this effect, showing the
 correlations between $\alpha$ and $\Mmin$ and $\alpha$ and $\Mmax$.
@@ -844,15 +813,14 @@ the two-Gaussian model parameters from our MCMC runs.  We find $\alpha
 > 0.8$ with 62\% probability, clearly favoring the first Gaussian.
 The distribution for $\mu_1$ and $\sigma_1$ are similar to those of
 the single Gaussian displayed in Figure \ref{fig:gaussian}, indicating
-that the first Gaussian has found the peak mass samples in Figure
-\ref{fig:masses}.  The second Gaussian's parameter distributions are
-much broader.  The second Gaussian appears to be sampling the tail of
-the mass samples (see Figure \ref{fig:masses}).  In spite of the
-ability to match a more complicated distribution, we find that this
-model is strongly disfavored relative to the single-Gaussian model for
-this dataset: $p(\textnormal{Gaussian}|d) / p(\textnormal{Two
-  Gaussian}|d) \simeq 4.7$ (see Section \ref{sec:model-selection} for
-discussion).
+that the first Gaussian is centered around the peaks of the lower-mass
+distributions.  The second Gaussian's parameter distributions are much
+broader.  The second Gaussian appears to be sampling the tail of the
+mass samples.  In spite of the ability to match a more complicated
+distribution, we find that this model is strongly disfavored relative
+to the single-Gaussian model for this dataset:
+$p(\textnormal{Gaussian}|d) / p(\textnormal{Two Gaussian}|d) \simeq
+4.7$ (see Section \ref{sec:model-selection} for discussion).
 
 \begin{figure}
   \begin{center}
@@ -865,13 +833,13 @@ discussion).
     of the single Gaussian model displayed in Figure
     \ref{fig:gaussian}; the second Gaussian's parameter distributions
     are much broader (recall that we constrain $\mu_2 > \mu_1$).  The
-    second Gaussian is attempting to fit the tail of the mass samples
-    (see Figure \ref{fig:masses}).  The extra degrees of freedom in
-    the distribution from the second Gaussian do not provide enough
-    extra fitting power to compensate for the increase in parmeter
-    space, however: the two-Gaussian model is disfavored relative to
-    the single Gaussian by a factor of $4.7$ on this dataset (see
-    Section \ref{sec:model-selection} for discussion).}
+    second Gaussian is attempting to fit the tail of the mass samples.
+    The extra degrees of freedom in the distribution from the second
+    Gaussian do not provide enough extra fitting power to compensate
+    for the increase in parmeter space, however: the two-Gaussian
+    model is disfavored relative to the single Gaussian by a factor of
+    $4.7$ on this dataset (see Section \ref{sec:model-selection} for
+    discussion).}
 \end{figure}
 
 \subsubsection{Log Normal}
@@ -1130,133 +1098,21 @@ equal:
   p(M_i) = \textnormal{const}.
 \end{equation}
 
-There are two broad ways to compare models in the context of the MCMC
-analysis of Section \ref{sec:models}.  The first way, which we discuss
-in Section \ref{sec:direct-evidence}, is to use the MCMC samples
-from the various models to estimate the single model evidence,
-$p(d|M_i)$, appearing in Equation \eqref{eq:model-evidence-def}.  The
-second way is to treat the model literally as a parameter in a second
-MCMC analysis.  In the second MCMC analysis, one proposes jumps not
-between different $\vtheta_i$ within a particular model, but from
-parameters $\vtheta_i$ in model $M_i$ to parameters $\vtheta_j$ in
-$M_j$.  The evidence for model $M_i$ is proportional to the number of
-times this MCMC has a sample in the $M_i$ parameter space.  This
-technique is called a ``reversible-jump MCMC'' \citep{Green1995}; we
-discuss it in Section \ref{sec:reversible-jump-mcmc}.
-
-\subsection{Direct Evidence Calculations}
-\label{sec:direct-evidence}
-
-To compute $p(M_i|d)$ from Equation \eqref{eq:model-evidence-def}
-using the MCMC samples we discussed in Section \ref{sec:models} we
-need a way to compute the single-model evidence, $p(d|M_i)$.  The
-remaining terms in Equation \eqref{eq:model-evidence-def} are either
-under our control (the prior $p(M_i)$) or a normalization factor that
-we can compute using Equation \eqref{eq:multi-model-evidence-def} once
-we have the single model evidence (the evidence $p(d)$).  Begin by
-re-writing Equation \eqref{eq:bayes-explicit-model}:
-\begin{equation}
-  \frac{p(\theta_i|d,M_i)}{p(d|\theta_i,M_i)} = \frac{p(\theta_i|M_i)}{p(d|M_i)}.
-\end{equation}
-Integrating both sides over all $\theta_i$, recalling that the prior
-is normalized, we have 
-\begin{equation}
-  \int d\theta_i\, \frac{p(\theta_i|d,M_i)}{p(d|\theta_i,M_i)} = \frac{1}{p(d|M_i)}.
-\end{equation}
-We can estimate the integral using our MCMC samples (which are
-distributed with local density $p(\theta_i|d,M_i)d\theta_i$) via
-\begin{equation}
-  \int d\theta_i\, \frac{p(\theta_i|d,M_i)}{p(d|\theta_i,M_i)} \approx
-  \frac{1}{N_i} \sum_j \frac{1}{p(d|\theta_{ij}, M_i)},
-\end{equation}
-where the $j$th MCMC parameter sample (from a total $N_i$) is
-$\theta_{ij}$.  Thus we have
-\begin{equation}
-  \frac{1}{p(d|M_i)} \approx \frac{1}{N_i} \sum_j \frac{1}{p(d|\theta_{ij}, M_i)}.
-\end{equation}
-This technique is known as the ``harmonic mean approximation'' for the
-single-model evidence $p(d|M_i)$.
-
-\citet{Weinberg2010} discusses techniques to estimate the integral
-over parameter space in Equation \eqref{eq:model-evidence-def} by
-adaptively partitioning the parameter volume into non-overlapping
-boxes surrounding the points in the MCMC sample.  We implemented the
-algorithms from that paper, but found them, in this case, to give
-results that depended strongly on the parameters in the algorithm and
-were sometimes inconsistent with both the harmonic mean calculations
-in this Section and the reversible jump calculations in Section
-\ref{sec:reversible-jump-mcmc}.  Since the harmonic mean and
-reversible jump calculations are in agreement with each other, we will
-not discuss these direct integration techniques further.
-
-The harmonic mean estimate of the evidence is known for having large
-statistical uncertainty due to the tendency for a few low-likelihood
-points to dominate the sum \citep{Weinberg2010}.  Therefore, it is
-useful to have multiple independent estimates of the evidence for a
-given model.  In Section \ref{sec:reversible-jump-mcmc}, we will
-discuss the reversible jump algorithm for estimating the evidence for
-our models; the results presented here are in broad agreement with the
-results in that Section.  In Figure \ref{fig:harmonic-evidence} we
-display the harmonic mean estimator for the evidence for the various
-models discussed in Section \ref{sec:models}.  In addition, we have
-performed 10000 calculations of the harmonic mean estimator using
-``mock'' MCMC data drawn randomly from our true MCMC with replacement.
-The errorbars in Figure \ref{fig:harmonic-evidence} indicate the 10\%
-and 90\% quantiles from this bootstrap calculation.  Recall that we
-assume that no model is a priori more likely than any other, so the
-model priors $p(M_i)$ are equal.  
-
-\begin{figure}
-  \begin{center}
-    \plotone{plots/evidence}
-  \end{center}
-  \caption{\label{fig:harmonic-evidence} Harmonic mean evidence for
-    the various models from Section \ref{sec:models} (see Section
-    \ref{sec:direct-evidence}).  In increasing order along the
-    $x$-axis, the models are the power-law of Section
-    \ref{sec:power-law} (PL), the decaying exponential of Section
-    \ref{sec:exponential} (E), the single Gaussian of Section
-    \ref{sec:gaussian} (G), the double Gaussian of Section
-    \ref{sec:gaussian} (TG), and the one-, two-, three-, four-, and
-    five-bin histogram models of Section
-    \ref{sec:non-parametric-models} (H1, H2, H3, H4, H5,
-    respectively).  The errorbars are bootstrap estimates of the 10\%
-    and 90\% bounds on the harmonic mean estimator.  The power-law and
-    Gaussian are the favored models, with the single-bin histogram
-    coming third (but the 10-90\% bootstrap range for the one-bin
-    histogram includes the possibility of being the most favored
-    model).  This is not surprising, given the single-peaked nature of
-    the lower-mass sample.}
-\end{figure}
-
-The results of the harmonic mean calculation indicate that the
-power-law and Gaussian models are most favored, with the single-bin
-histogram coming third (though the 10-90\% range for the models
-includes the possibility of it being the most favored).  This is not
-surprising, given the single-peaked nature of the lower-mass sample.
-The log normal and exponential models are likely disfavored due to
-their long tails.  The multiple-bin histogram models are disfavored
-because the structure of the lower-mass mass distribution is not
-complicated enough to warrant the extra parameter space implied by the
-larger number of bins.  The two Gaussian model is disfavored because
-the distribution is single-peaked, so the second Gaussian is
-superfluous.  
-
 \subsection{Reversible-Jump MCMC}
 \label{sec:reversible-jump-mcmc}
 
-Another technique for computing $p(M_i|d)$ is the reversible-jump MCMC
-\citep{Green1995}.  For a reversible-jump MCMC, we consider a
-``super-model'' that encompasses all the models under consideration.
-The parameter space of the super-model consists of a discrete
-parameter that identifies the choice of model, $M_i$, and the
-continuous parameters appropriate for this model, $\vtheta_i$.  We
-denote a point in the super-model parameter space by $\{M_i,
-\vtheta_i\}$; each such point is a statement that, e.g., ``the
-underlying mass distribution is a Gaussian, with parameters $\mu$ and
-$\sigma$,'' or ``the underlying mass distribution is a triple-bin
-histogram with parameters $w_1$, $w_2$, $w_3$, and $w_4$,'' or ....
-To compare models, we are interested in the quantity (see Equation
+A powerful technique for computing $p(M_i|d)$ is the reversible-jump
+MCMC \citep{Green1995}.  Consider the ``super-model'' that encompasses
+all the models under consideration.  The parameter space of the
+super-model consists of a discrete parameter that identifies the
+choice of model, $M_i$, and the continuous parameters appropriate for
+this model, $\vtheta_i$.  We denote a point in the super-model
+parameter space by $\{M_i, \vtheta_i\}$; each such point is a
+statement that, e.g., ``the underlying mass distribution is a
+Gaussian, with parameters $\mu$ and $\sigma$,'' or ``the underlying
+mass distribution is a triple-bin histogram with parameters $w_1$,
+$w_2$, $w_3$, and $w_4$,'' or ....  To compare models, we are
+interested in the quantity (see Equation
 \eqref{eq:model-posterior-def})
 \begin{equation}
   p(M_i|d) = \int d\vtheta_i p(M_i, \vtheta_i|d).
@@ -1765,7 +1621,10 @@ analysis including the higher-mass systems; compare to Table
   \caption{\label{tab:high-mass-non-parametric} The 5\%, 15\%, 50\%
     (median), 85\%, and 95\% quantiles for the bin boundaries in the
     one- through five-bin histogram models discussed in Section
-    \ref{sec:non-parametric-models} in an analysis including the higher-mass, wind-fed systems.  The tails evident in Figure \ref{fig:high-mass-dists} are apparent here as well; compare to Table \ref{tab:low-mass-non-parametric}.}
+    \ref{sec:non-parametric-models} in an 
+    analysis including the higher-mass, wind-fed systems.  
+    The tails evident in Figure \ref{fig:high-mass-dists} are apparent
+    here as well; compare to Table \ref{tab:low-mass-non-parametric}.}
 \end{table}
 
 \subsection{Model Selection}
@@ -1779,46 +1638,19 @@ a different underlying population than the lower-mass, Roche-lobe
 overflow systems.  As before, we assume for this analysis that the
 model priors are equal.
 
-The harmonic mean estimators for the model probabilities are displayed
-in Figure \ref{fig:high-harmonic-evidence}; compare Figure
-\ref{fig:harmonic-evidence}.  Reversible jump MCMC calculations of the
-model probabilities are displayed in Figure
-\ref{fig:high-rj-evidence}; compare Figure \ref{fig:rj}.  Though the
-resulting rankings are not in complete agreement, a striking feature
-of both calculations is that the two-Gaussian model is much more
-likely with the higher-mass samples.  In the harmonic mean
-calculation, the power-law model is the most likely; in the
-reversible-jump calculation the exponential model is most likely.  In
-either case, the most likely model differs significantly from the most
-likely model for the lower-mass samples.  The model selection provides
-more strong evidence that the wind-fed and Roche-lobe systems come
-from different underlying populations.  The improvement of the
-exponential model relative to the lower-mass analysis (it is the most
-likely model in the reversible-jump MCMC) is encouraging for
-theoretical calculations that attempt to model the entire population
-of X-ray binaries with this mass model.  Note also that the increasing
-structure of the mass distribution favors histogram models with three
-bins over those with fewer bins.
-
-\begin{figure}
-  \begin{center}
-    \plotone{plots/evidence-high}
-  \end{center}
-  \caption{\label{fig:high-harmonic-evidence} Harmonic mean evidence
-    for the various models from Section \ref{sec:models} applied to
-    all 20 systems in Table \ref{tab:sources} (see Section
-    \ref{sec:direct-evidence}).  In increasing order along the
-    $x$-axis, the models are the power-law of Section
-    \ref{sec:power-law} (PL), the decaying exponential of Section
-    \ref{sec:exponential} (E), the single Gaussian of Section
-    \ref{sec:gaussian} (G), the double Gaussian of Section
-    \ref{sec:gaussian} (TG), and the one-, two-, three-, four-, and
-    five-bin histogram models of Section
-    \ref{sec:non-parametric-models} (H1, H2, H3, H4, H5,
-    respectively).  The errorbars are bootstrap estimates of the 10\%
-    and 90\% bounds on the harmonic mean estimator.  Compare to Figure
-    \ref{fig:harmonic-evidence}.}
-\end{figure}
+Reversible jump MCMC calculations of the model probabilities are
+displayed in Figure \ref{fig:high-rj-evidence}; compare Figure
+\ref{fig:rj}.  The exponential model is the most favored model for the
+complete sample, with the two-Gaussian model the second-most favored.
+The ranking of models differs significantly from the lower-mass
+samples.  The model selection provides more strong evidence that the
+wind-fed and Roche-lobe systems come from different underlying
+populations.  The improvement of the exponential model relative to the
+lower-mass analysis is encouraging for theoretical calculations that
+attempt to model the entire population of X-ray binaries with this
+mass model.  Note also that the increasing structure of the mass
+distribution favors histogram models with three bins over those with
+fewer bins.
 
 \begin{figure}
   \begin{center}
