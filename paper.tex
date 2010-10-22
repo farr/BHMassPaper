@@ -478,7 +478,11 @@ sample values for that parameter.  Such a distribution is called the
 An important part of any Bayesian analysis is the priors placed on the
 parameters of the model.  The choice of priors can bias the results of
 the analysis through both the shape and the range of prior support in
-parameter space.
+parameter space.  The prior should reflect the ``best guess'' for the
+distribution of parameters before examining any of the data.  In the
+absence of any information about the distribution of parameters, it is
+best to choose a prior that is broad and uniformative to avoid biasing
+the posterior as much as possible.
 
 A prior that is independent of parameters, $\vtheta$, in some region,
 called ``flat,'' results in a posterior that is proportional to the
@@ -682,12 +686,13 @@ play for all values of $\alpha$.
 
 \citet{Fryer2001} suggest that the black-hole mass distribution may be
 well-represented by a decaying exponential with a minimum mass:
+\fixme{Vicky, do you want to say anything more here?}
 \begin{equation}
   \label{eq:exp-def}
   p(M|\vtheta) = p(M|\{\Mmin, M_0\}) = 
   \begin{cases}
     \frac{e^{\frac{\Mmin}{M_0}}}{M_0} \exp \left[ - \frac{M}{M_0}
-    \right] & \Mmin \leq M \\
+    \right] & M \geq \Mmin \\
     0 & \textnormal{otherwise}
   \end{cases}.
 \end{equation}
@@ -1364,7 +1369,7 @@ to the one in Figure \ref{fig:dists}.
 
 \begin{figure}
   \begin{center}
-    \plottwo{plots/dist-parametric-high}{plots/dist-non-parametric-high}
+    \plottwo{plots/dist-parametric-high}{plots/dist-non-parametric-high-mass}
   \end{center}
   \caption{\label{fig:high-mass-dists} The median values of the black
     hole mass distribution, $p(M|\theta)$, at various masses implied
