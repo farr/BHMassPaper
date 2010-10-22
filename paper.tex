@@ -34,13 +34,24 @@
 \email{andrew.cantrell@yale.edu, laura.kreidberg@yale.edu,
   charles.bailyn@yale.edu}
 
-\author{Ilya Mandel \and Vicky Kalogera} 
+\author{Ilya Mandel\altaffilmark{1}}
+
+\affil{MIT Kavli Institute, Cambridge, MA 02139}
+
+\email{ilyamandel@chgk.info}
+
+\and
+
+\author{Vicky Kalogera} 
 
 \affil{Northwestern University Center for Interdisciplinary
   Exploration and Research in Astrophysics\\2145 Sheridan Rd.,
   Evanston, IL 60208}
 
- \email{ilyamandel@chgk.info, vicky@northwestern.edu}
+ \email{vicky@northwestern.edu}
+
+ \altaffiltext{1}{School of Physics and Astronomy, University of
+   Birmingham, Edgbaston, Birmingham B15 2TT, UK}
 
 \begin{abstract}
   We perform a Bayesian analysis of the mass distribution of
@@ -185,7 +196,7 @@ mass ratios and inclinations.  When a large range is quoted in the
 literature for an observable, we take the true value to be distributed
 uniformly (for the mass ratio) or isotropically (for the inclination)
 within the quoted range.  Table \ref{tab:sources} gives the assumed
-distribution for the observables in the 17 systems we use.  We do not
+distribution for the observables in the 20 systems we use.  We do not
 attempt to deal with the systematic biases in the observational
 determination of $f$, $q$, and $i$ in any realistic way; we are
 currently investigating more realistic treatments of the errors
@@ -428,15 +439,16 @@ condition for convergence.
 
 We begin the chain at an arbitrary point in parameter space; this is
 equivalent to taking a finite section of an infinite chain that begins
-with the chosen point.  Since every point in parameter space occurs in
-an infinite chain, and no section of the chain is better than any
-other, our chosen finite chain will have the appropriate distribution.
-However, because consecutive samples in a chain are correlated with
-each other, the beginning of our finite chain has a ``memory'' of the
-starting point; we discard enough points at the beginning of the
-finite chain that we can be confident it does not retain a memory of
-the arbitrary starting point.  The points discarded in this way are
-commonly called ``burn-in'' points.
+with the chosen point.  Every point in parameter space occurs in an
+infinite chain, and no section of the chain is better than any other,
+so a sufficiently long, but finite, section of the infinite chain
+chosen in this manner can be representative of the statistics of the
+chain as a whole.  However, because consecutive samples in a chain are
+correlated with each other, the beginning of our finite chain has a
+``memory'' of the starting point; we discard enough points at the
+beginning of the finite chain that we can be confident it does not
+retain a memory of the arbitrary starting point.  The points discarded
+in this way are commonly called ``burn-in'' points.
 
 Once we have a chain of samples from $p(\vtheta|d)$---a distribution
 of distributions---the distribution for any quantity of interest can
@@ -583,7 +595,7 @@ parametric models.
 \subsubsection{Power-Law Models}
 \label{sec:power-law}
 
-Many astrophysical distributions are power-laws.  Let us assume that
+Many astrophysical distributions are power laws.  Let us assume that
 the BH mass distribution is given by
 \begin{equation}
   \label{eq:power-law-dist}
@@ -1085,7 +1097,7 @@ marginalized posterior probability of $M_i$:
   \label{eq:model-posterior-def}
   p(M_i|d) \equiv \int d\vtheta_i\, p(\vtheta_i, M_i|d).
 \end{equation}
-This is the total posterior probability found in the parameter space
+This is the integral of the posterior over the entire parameter space
 of model $M_i$.  The marginalized posterior probability of model $M_i$
 can be re-written in terms of the single-model evidence, $p(d|M_i)$
 (see Equations \eqref{eq:bayes-explicit-model} and
@@ -1124,7 +1136,7 @@ interested in the quantity (see Equation
 \end{equation}
 If we perform an MCMC in the super-model parameter space, then we
 obtain a chain of samples $\{M_i, \vtheta_i\}$ distributed in
-parameter space with density $p(M_i,\vtheta_i) d\vtheta_i$ and we can
+parameter space with density $p(M_i,\vtheta_i|d) d\vtheta_i$ and we can
 estimate the integral as
 \begin{equation}
   p(M_i|d) = \int d\vtheta_i p(M_i, \vtheta_i|d) \approx \frac{N_i}{N},
@@ -1233,14 +1245,16 @@ above.  The total cost for this operation is proportional to the
 number of levels in the tree, which is $\order{\log N}$.
 
 We have performed a suite of 500 independent reversible-jump MCMCs
-jumping between all the models (both parametric and non-parametric)
-in Section \ref{sec:models} using the single-model MCMC samples to
+jumping between all the models (both parametric and non-parametric) in
+Section \ref{sec:models} using the single-model MCMC samples to
 construct an efficient jump proposal for each model as described
 above.  The numbers of counts in each model are consistent across the
 MCMCs in the suite; Figure \ref{fig:rj} displays the average
 probability for each model across the suite, along with the 1-$\sigma$
 errors on the average inferred from the standard deviation of the
-model counts across the suite.  Table \ref{tab:rj}
+model counts across the suite.  Table \ref{tab:rj} gives the numerical
+values of the average probability for each model across the suite of
+MCMCs.
 
 \begin{figure}
   \begin{center}
@@ -1280,7 +1294,7 @@ in the ranking of evidence.
   \begin{center}
     \begin{tabular}{|l|r|}
       \hline
-      Model & Relative Probability \\
+      Model & Relative Evidence \\
       \hline \hline
       Power Law (Section \ref{sec:power-law}) & 0.331488 \\
       \hline
@@ -1321,10 +1335,10 @@ The source of this error is both the particular choice of model prior
 within each model used for this work.  For example, the
 theoretically-preferred exponential model (Section
 \ref{sec:exponential}) is only a factor of $\sim 3$ away from the
-most-favored Power Law model (Section \ref{sec:power-law}), which does
-not have theoretical support.  Is such support worth a factor of three
-in the model prior?  Alternately, we may say we know (in advance of
-any mass measurements) that black holes must exist with mass $\lesssim
+power law model (Section \ref{sec:power-law}), which does not have
+theoretical support.  Is such support worth a factor of three in the
+model prior?  Alternately, we may say we know (in advance of any mass
+measurements) that black holes must exist with mass $\lesssim
 10\Msun$; then we could, for example, impose a prior on the minimum
 mass in the exponential model ($\Mmin$) that is uniform between $0$
 and $10 \Msun$, which would reduce the prior volume available for the
@@ -1345,12 +1359,8 @@ Gaussian) are preferred over ``extended'' models (the exponential or
 log-normal), or those with ``structure'' (the many-bin histograms or
 two-Gaussian model).  Previous studies have also supported the
 ``single, narrow peak'' mass distribution \citep{Bailyn1998,Ozel2010}.
-In this light, the difference between the evidence calculated from the
-harmonic mean estimator and the reversible-jump MCMC for the
-single-bin histogram is surprising; one would expect that a
-narrowly-peaked single-bin histogram would perform well (as it does
-with the harmoinc-mean estimator) instead of being disfavored relative
-to the other models (as with the reversible-jump MCMC).
+In this light, poor performance of the single-bin histogram is
+surprising.
 
 \section{Including High-Mass, Wind-Fed Systems}
 \label{sec:higher-mass}
@@ -1702,7 +1712,7 @@ distribution).  (A cutoff quantile is necessary in the case of those
 distributions that do not have a hard cutoff mass; even for those that
 do, like the power-law model, it can be useful to define a ``soft''
 cutoff in the event that the lower mass hard cutoff becomes an
-irrelevant parameter is discussed in Section \ref{sec:power-law}.
+irrelevant parameter as discussed in Section \ref{sec:power-law}.)
 
 \begin{figure}
   \begin{center}
@@ -1716,27 +1726,19 @@ irrelevant parameter is discussed in Section \ref{sec:power-law}.
     black hole mass is 4.3 $\Msun$ and 2.9 $\Msun$, respectively.}
 \end{figure}
 
-We find that the best-fit models (the power-law and Gaussian) have a
-90\% confidence limit on the minimum black hole mass of 4.3 $\Msun$
-and 2.9 $\Msun$, respectively.  These are both significantly above the
-maximum neutron star mass, so we conclude that the lower-mass systems
-show strong evidence of a mass gap.
+We find that the best-fit model (the power-law) has a 90\% confidence
+limit on the minimum black hole mass of 4.3 $\Msun$.  This is
+significantly above the maximum theoretically-allowed neutron star
+mass, $\sim 3 \Msun$ \citep{Kalogera1996}\fixme{Vicky, do you have a
+  more recent reference than this?}, so we conclude that the
+lower-mass systems show strong evidence of a mass gap.
 
 The distribution of minimum black hole masses for the analysis of the
 complete sample (i.e.\ including the higher-mass systems) is shown in
-Figure \ref{fig:high-min-mass}.  For the most favored models, the
-power-law, exponential and two-Gaussian, the 90\% confidence limit on
-the minimum black hole mass is 5.2 $\Msun$, 4.5 $\Msun$, and 2.2
-$\Msun$, respectively.  Except for the two-Gaussian model, these are
-also well above the maximum neutron star mass.  Recall that the
-two-Gaussian model is forced to have a wide, symmetric, high-mass peak
-to match the high-mass samples when, in fact, the mass distribution is
-asymmetric.  This symmetry of the Gaussian forces the distribution
-artificially high at low masses; it seems likely that the low minimum
-black hole mass for the two-Gaussian is not a true feature of the
-black hole mass distribution, but rather due to this effect.  We
-therefore conclude that there is strong evidence for a mass gap in the
-complete sample as well.  
+Figure \ref{fig:high-min-mass}.  For the most favored model, the
+exponential, the 90\% confidence limit on the minimum black hole mass
+is 4.5 $\Msun$.  We therefore conclude that there is strong evidence
+for a mass gap in the complete sample as well.
 
 \begin{figure}
 \begin{center}
@@ -1751,25 +1753,15 @@ complete sample as well.
     mass is 5.2 $\Msun$, 4.5 $\Msun$, and 2.2 $\Msun$, respectively.}
 \end{figure}
 
-It is interesting that the minimum black hole mass for the power-law
-model \emph{increases} significantly when the higher-mass samples are
-added.  We hypothesize that the minimum black hole mass for the
-lower-mass samples alone is artificially lowered due to the
-correlations among the power-law parameters that lead to a wide
-distribution of power-law slopes discussed in Section
-\ref{sec:power-law}, and that the higher-mass result may be more
-indicative of the true minimum mass of the distribution.  In either
-case, however, the minimum mass is significantly above the maximum
-neutron star mass.
-
 \section{Conclusion}
 
 \acknowledgements
 
-This work was supported by grant \fixme{XXX}.  Calculations for this
-work were performed on the Northwestern Fugu cluster, which was
-partially funded by NSF MRI grant \fixme{XXX}.  We thank Jonathan Gair
-for helpful discussions.
+This work was supported by grant \fixme{XXX}.  IM acknowledges support
+from the NSF AAPF under award AST-0901985.  Calculations for this work
+were performed on the Northwestern Fugu cluster, which was partially
+funded by NSF MRI grant \fixme{XXX}.  We thank Jonathan Gair for
+helpful discussions.
 
 \bibliography{paper}
 
