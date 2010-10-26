@@ -918,7 +918,7 @@ normalized.
 
 \begin{figure}
   \begin{center}
-    \plottwo{plots/dist-parametric}{plots/dist-non-parametric}
+    \plotone{plots/dist}
   \end{center}
   \caption{\label{fig:dists} The median (solid line), 10\% (lower
     dashed line) and 90\% (upper dashed line) values of the black hole
@@ -927,10 +927,9 @@ normalized.
     \ref{sec:parametric-models} and \ref{sec:non-parametric-models}.
     These distributions use only the 15 low-mass observations in Table
     \ref{tab:sources} (the complete sample is analyzed in Section
-    \ref{sec:higher-mass}).  Error bars span the 10\% to 90\% range.
-    Note that these ``distributions of distributions'' are not
-    necessarily normalized, and need not be shaped like the underlying
-    model distributions.}
+    \ref{sec:higher-mass}).  Note that these ``distributions of
+    distributions'' are not necessarily normalized, and need not be
+    shaped like the underlying model distributions.}
 \end{figure}
 
 \subsubsection{Power Law}
@@ -950,7 +949,7 @@ and similarly for $\Mmin$ and $\Mmax$.
   \begin{center}
     \plotone{plots/power-law}
   \end{center}
-  \caption{\label{fig:power-law} A histogram of the marginalized
+  \caption{\label{fig:power-law} Histograms of the marginalized
     distribution for the three parameters $\Mmin$, $\Mmax$, and
     $\alpha$ from the power-law model.  The marginalized distribution
     for $\alpha$ is broad, with $-11.8 < \alpha < 6.8$ enclosing 90\%
@@ -1017,11 +1016,11 @@ mass is smaller.
     \plotone{plots/exp-cutoff}
   \end{center}
   \caption{\label{fig:exp-marginal} The distribution of scale masses,
-    $M_0$, and minimum masses, $\Mmin$, both measured in units of a
-    solar mass for the exponential underlying mass distribution
-    defined in Equation \eqref{eq:exp-def}.  The median scale mass is
-    $M_0 = 1.55$, and $0.78 \leq M_0 \leq 3.25$ with 90\%
-    confidence.}
+    $M_0$ (dashed histogram), and minimum masses, $\Mmin$ (solid
+    histogram), both measured in units of a solar mass for the
+    exponential underlying mass distribution defined in Equation
+    \eqref{eq:exp-def}.  The median scale mass is $M_0 = 1.55$, and
+    $0.78 \leq M_0 \leq 3.25$ with 90\% confidence.}
 \end{figure}
 
 \begin{figure}
@@ -1050,11 +1049,11 @@ here.
     \plotone{plots/gaussian}
   \end{center}
   \caption{\label{fig:gaussian} Marginalized posterior distributions
-    for the mean $\mu$ and standard deviation $\sigma$ (both in solar
-    masses) for the Gaussian underlying mass distribution defined in
-    Equation \eqref{eq:gaussian-def}.  The peak of the Gaussian,
-    $\mu$, is constrained in $6.63 \leq \mu \leq 8.08$ with 90\%
-    confidence.}
+    for the mean, $\mu$ (solid histogram), and standard deviation,
+    $\sigma$ (dashed histogram), both in solar masses for the Gaussian
+    underlying mass distribution defined in Equation
+    \eqref{eq:gaussian-def}.  The peak of the Gaussian, $\mu$, is
+    constrained in $6.63 \leq \mu \leq 8.08$ with 90\% confidence.}
 \end{figure}
 
 \subsubsection{Two Gaussian}
@@ -1079,10 +1078,13 @@ $p(\textnormal{Gaussian}|d) / p(\textnormal{Two Gaussian}|d) \simeq
     \plotone{plots/two-gaussian}
   \end{center}
   \caption{\label{fig:two-gaussian} The marginal distributions for the
-    five parameters of the two-Gaussian model.  We have $\alpha > 0.8$
-    with 62\% probability, favoring the first of the two Gaussians.
-    The distributions for $\mu_1$ and $\sigma_1$ are similar to those
-    of the single Gaussian model displayed in Figure
+    five parameters of the two-Gaussian model.  The top panel is
+    $\mu_1$ (solid histogram) and $\sigma_1$ (dashed histogram), the
+    middle panel is $\mu_2$ (solid histogram) and $\sigma_2$ (dashed
+    histogram), and the bottom panel is $\alpha$. We have $\alpha >
+    0.8$ with 62\% probability, favoring the first of the two
+    Gaussians.  The distributions for $\mu_1$ and $\sigma_1$ are
+    similar to those of the single Gaussian model displayed in Figure
     \ref{fig:gaussian}; the second Gaussian's parameter distributions
     are much broader (recall that we constrain $\mu_2 > \mu_1$).  The
     second Gaussian is attempting to fit the tail of the mass samples.
@@ -1106,11 +1108,11 @@ to those for $\mu$ and $\sigma$ from the Gaussian model in Section
     \plotone{plots/log-normal}
   \end{center}
   \caption{\label{fig:log-normal} Marginalized distributions of the
-    mean mass, $\langle M \rangle$, and standard deviation of the
-    mass, $\sigma_M$, for the log-normal model in Section
-    \ref{sec:log-normal}.  The distributions are similar to the
-    distributions of $\mu$ and $\sigma$ in the Gaussian model of
-    Section \ref{sec:gaussian}.}
+    mean mass, $\langle M \rangle$ (solid histogram), and standard
+    deviation of the mass, $\sigma_M$ (dashed histogram), for the
+    log-normal model in Section \ref{sec:log-normal}.  The
+    distributions are similar to the distributions of $\mu$ and
+    $\sigma$ in the Gaussian model of Section \ref{sec:gaussian}.}
 \end{figure}
 
 \subsubsection{Histogram Models}
@@ -1315,7 +1317,7 @@ to the one in Figure \ref{fig:dists}.
 
 \begin{figure}
   \begin{center}
-    \plottwo{plots/dist-parametric-high}{plots/dist-non-parametric-high-mass}
+    \plotone{plots/dist-high}
   \end{center}
   \caption{\label{fig:high-mass-dists} The median (solid line), 10\%
     (lower dashed line), and 90\% (upper dashed line) values of the
@@ -1324,15 +1326,15 @@ to the one in Figure \ref{fig:dists}.
     Sections \ref{sec:parametric-models} and
     \ref{sec:non-parametric-models}.  These distributions use the
     complete sample of 20 observations in Table \ref{tab:sources},
-    including the higher-mass, wind-fed systems.  Error bars span the
-    10\% to 90\% range.  Note that these ``distributions of
-    distributions'' are not necessarily normalized, and need not be
-    ``shaped'' like the underlying model distributions.  Compare to
-    Figure \ref{fig:dists}, which includes only the low-mass systems
-    in the analysis.  Including the higher-mass systems tends to widen
-    the distribution toward the high-mass end and, in models that
-    allow it, produce a second, higher-mass peak in addition to the
-    one in Figure \ref{fig:dists}. }
+    including the higher-mass, wind-fed systems.  Note that these
+    ``distributions of distributions'' are not necessarily normalized,
+    and need not be ``shaped'' like the underlying model
+    distributions.  Compare to Figure \ref{fig:dists}, which includes
+    only the low-mass systems in the analysis.  Including the
+    higher-mass systems tends to widen the distribution toward the
+    high-mass end and, in models that allow it, produce a second,
+    higher-mass peak in addition to the one in Figure
+    \ref{fig:dists}. }
 \end{figure}
 
 \subsubsection{Power Law}
@@ -1353,7 +1355,7 @@ Section \ref{sec:power-law} and displayed in Figure
   \begin{center}
     \plotone{plots/power-law-high}
   \end{center}
-  \caption{\label{fig:power-law-high} A histogram of the marginalized
+  \caption{\label{fig:power-law-high} Histograms of the marginalized
     distribution for the three parameters $\Mmin$, $\Mmax$, and
     $\alpha$ from the power-law model including the higher-mass
     samples in the MCMC.  The distribution for $\Mmax$ is quite broad
@@ -1662,7 +1664,7 @@ irrelevant parameter as discussed in Section \ref{sec:power-law}.)
 
 \begin{figure}
   \begin{center}
-    \plottwo{plots/mmin-parametric}{plots/mmin-non-parametric}
+    \plotone{plots/mmin}
   \end{center}
   \caption{\label{fig:min-mass} The distributions for the minimum
     black hole mass calculated from the MCMC samples for the models in
@@ -1690,7 +1692,7 @@ for a mass gap in the complete sample as well.
 
 \begin{figure}
 \begin{center}
-    \plottwo{plots/mmin-parametric-high}{plots/mmin-non-parametric-high}
+    \plotone{plots/mmin-high}
   \end{center}
   \caption{\label{fig:high-min-mass} The distributions for the minimum
     black hole mass calculated from the MCMC samples for the models in
