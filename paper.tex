@@ -28,7 +28,7 @@
 
 \email{w-farr@northwestern.edu, niharika.sravan@gmail.com}
 
-\author{Andrew Cantrell \and Laura Kreidberg \and Charles Bailyn}
+\author{Andrew Cantrell \and Laura Kreidberg \and Charles D. Bailyn}
 
 \affil{Yale University Department of Astrophysics\\
   P.O. Box 208101, New Haven, CT 06520}
@@ -74,20 +74,24 @@
     difference clearly indicates that the character of the low mass
     X-ray binary systems differs from the higher-mass systems.}  We
   examine the existence of a ``gap'' between the most massive neutron
-  stars and least massive black holes, finding that the best model
-  (the power law) fitted to the low-mass systems only gives a minimum
-  black-hole mass of 4.3 $\Msun$ (90\% confidence), while the best
-  model (the exponential) fitted to all 20 systems gives a minumum
-  black-hole mass of 4.5 $\Msun$ (90\% confidence).  We conclude that
-  our sample of black hole masses provides strong evidence of a gap
-  between the maximum neutron star mass and minimum black hole mass.
-  \changed{Our results on the low-mass sample are in qualitative
-    agreement with those of \citet{Ozel2010}, although our broad model
-    selection analysis more reliably reveals the best-fit quantitative
-    description of the underlying mass distribution.  The results on
-    the complete sample of low- and higher-mass systems are in
-    qualitative agreement with \citet{Fryer2001} although the presence
-    of a mass gap remains theoretically unexplained.}
+  stars and least massive black holes.  \changed{Our analysis
+    generates distributions of lower bounds on the black hole mass
+    distribution; we use the 1\% quantile of the mass distribution,
+    $M_{1\%}$, for a lower bound because some of our distributions do
+    not have a sharp lower limit.  For the best model (the power law)
+    fitted to the low-mass systems this distribution of lower-bounds
+    has $M_{1\%} > 4.3$ $\Msun$ with 90\% confidence, while the best
+    model (the exponential) fitted to all 20 systems has $M_{1\%} >
+    4.5$ $\Msun$ with 90\% confidence.}  We conclude that our sample
+  of black hole masses provides strong evidence of a gap between the
+  maximum neutron star mass and \changed{the lower bound on} black
+  hole masses.  \changed{Our results on the low-mass sample are in
+    qualitative agreement with those of \citet{Ozel2010}, although our
+    broad model selection analysis more reliably reveals the best-fit
+    quantitative description of the underlying mass distribution.  The
+    results on the complete sample of low- and higher-mass systems are
+    in qualitative agreement with \citet{Fryer2001} although the
+    presence of a mass gap remains theoretically unexplained.}
 \end{abstract}
 
 \maketitle
@@ -106,28 +110,30 @@ in the LIGO gravitational wave observatory \citep{Abadie2010}.
 
 Observations of low-mass X-ray binaries in both the optical and X-ray
 can provide a measurement of the mass of the compact object in these
-systems.  \changed{The current sample of dynamically measured stellar
-  mass black holes includes 15 low-mass, Roche lobe overflowing
-  systems and 5 wind-fed higher-mass systems.  Hence, sophisticaed
-  statistical analyses are possible.}
+systems.  \changed{The current sample of stellar mass black holes with
+  dynamically measured masses includes 15 low-mass, Roche lobe
+  overflowing systems and 5 wind-fed higher-mass systems.  Hence,
+  sophisticated statistical analyses of the black hole mass
+  distribution in these systems are possible.}
 
 The first study of the mass distribution of stellar-mass black holes,
 in \citet{Bailyn1998}, examined a sample of seven low-mass X-ray
 binaries thought to contain a black hole, concluding in a Bayesian
 analysis that the mass function was strongly peaked around seven solar
-masses.  \citet{Bailyn1998} found evidence of a ``gap'' between the
-least massive black hole and a ``safe'' upper limit for neutron star
-masses of 3 $\Msun$ (e.g.\ \citet{Kalogera1996}).  Such a gap is
-puzzling in light of theoretical studies that predict a continuous
-distribution of compact object supernova remnant masses with a smooth
-transition from neutron stars to black holes \citep{Fryer2001}.
-\changed{(It should be noted that \citet{Fryer2001} considered binary
-  evolution effects only heuristically and put forward some possible
-  explanations for the gap from \citet{Bailyn1998} both in the context
-  of selection effects or in connection to the energetics of supernova
-  explosions.)}
+masses.  \changed{(A similar analysis of the neutron star mass
+  distribution can be found in \citet{Finn1994}.)}  \citet{Bailyn1998}
+found evidence of a ``gap'' between the least massive black hole and a
+``safe'' upper limit for neutron star masses of 3 $\Msun$ (e.g.\
+\citet{Kalogera1996}).  Such a gap is puzzling in light of theoretical
+studies that predict a continuous distribution of compact object
+supernova remnant masses with a smooth transition from neutron stars
+to black holes \citep{Fryer2001}.  \changed{(But note that
+  \citet{Fryer2001} considered binary evolution effects only
+  heuristically and put forward some possible explanations for the gap
+  from \citet{Bailyn1998} both in the context of selection effects or
+  in connection to the energetics of supernova explosions.)}
 
-\changed{Towards the end of our anlysis work, we became aware of a
+\changed{Towards the end of our analysis work, we became aware of a
   more recent study \citep{Ozel2010}, also in a Bayesian framework,
   analyzing the low-mass X-ray binary sample.}  It largely confirmed
 these findings, examining 16 low-mass X-ray binary systems containing
@@ -158,8 +164,8 @@ black hole primary.
 
 We use a Bayesian Markov-Chain Monte Carlo (MCMC) analysis to
 quantitatively assess a wide range of models for the black hole mass
-function for both samples.  We include both parameteric models, such
-as a Gaussian, and non-parameteric models where the mass function is
+function for both samples.  We include both parametric models, such
+as a Gaussian, and non-parametric models where the mass function is
 represented by histograms with various numbers of bins.  (Our set of
 models includes those of \citet{Ozel2010} and \citet{Bailyn1998}.)
 After computing posterior distributions for the model parameters, we
@@ -167,13 +173,21 @@ use model selection techniques (including a new technique for
 efficient reversible-jump MCMC \citep{Farr2010}) to compare the
 evidence for the various models from both samples.
 
-In agreement with \citet{Ozel2010} and \citet{Bailyn1998}, we find
-strong evidence for a mass gap among the best models for both samples,
-with the best model for the low-mass systems giving a minimum black
-hole mass of 4.3 $\Msun$ (at 90\% confidence), and the best model for
-the combined sample of lower- and high-mass systems giving a minimum
-black hole mass of 4.5 $\Msun$ (at 90\% confidence).  Further, among
-the models with lower evidence, most also have a mass gap.
+\changed{We define the ``minimum black hole mass'' to be the 1\%
+  quantile, $M_{1\%}$, in the black hole mass distribution (see
+  Section \ref{sec:minimum-mass}).  In agreement with \citet{Ozel2010}
+  and \citet{Bailyn1998}, we find strong evidence for a mass gap among
+  the best models for both samples.  Our analysis gives distributions
+  for $M_{1\%}$ implied by the data in the context of each of our
+  models for the black hole mass distribution.  In the context of the
+  best model for the low-mass systems (a power-law), the distribution
+  for $M_{1\%}$ has $M_{1\%} > 4.3$ $\Msun$ (at 90\% confidence); in
+  the context of the best model for the combined sample of lower- and
+  high-mass systems the distribution of $M_{1\%}$ has $M_{1\%} > 4.5$
+  $\Msun$ with 90\% confidence.  Further, in the context of models
+  with lower evidence, most also have a mass gap, with 90\% confidence
+  bounds on $M_{1\%}$ significantly above a ``safe'' maximum neutron
+  star mass of 3 $\Msun$ \citep{Kalogera1996}.}
 
 \changed{We find that, for the low-mass X-ray binary sample, the
   theoretical model from \citet{Fryer2001}, a decaying exponential is
@@ -187,6 +201,26 @@ the models with lower evidence, most also have a mass gap.
   combined sample of systems.  The difference in best-fitting model
   clearly indicates that the character of the low mass X-ray binary
   systems differs from the higher-mass systems.}
+
+\changed{The structure of this paper is as follows.  In Section
+  \ref{sec:systems} we discuss the 15 systems that comprise the
+  low-mass X-ray binary black hole sample and the 5 additional
+  higher-mass, wind-fed systems that make up the complete sample.  In
+  Section \ref{sec:models} we discuss the Bayesian techniques we use
+  to analyze the black hole mass distribution, the techniques we use
+  for model selection, and the parametric and non-parametric models we
+  will for the black hole mass distribution.  In Section
+  \ref{sec:results} we discuss the results of our analysis and model
+  selection.  In Section \ref{sec:minimum-mass} we discuss the
+  distribution of the minimum black hole mass implied by the analysis
+  of Section \ref{sec:results}.  In Section \ref{sec:conclusion} we
+  summarize our results and comment on the significance of the
+  observed mass gap in the context of theoretical models.  Appendix
+  \ref{sec:mcmc} describes MCMC techniques in some detail.  Appendix
+  \ref{sec:reversible-jump-mcmc} explains our novel algorithm for
+  efficiently performing the reversible jump MCMC computations used in
+  the model comparisons of Section \ref{sec:results} (but see also
+  \citet{Farr2010}).}
 
 \section{Systems}
 \label{sec:systems}
@@ -301,8 +335,7 @@ observations).  This treatment will appear in future work.
        \hline
     \end{tabular}
   \end{center}
-  \caption{\label{tab:sources} The source parameters for the 20 low
-    mass X-ray binaries used in this work.  The first 15 systems have
+  \caption{\label{tab:sources} The source parameters for the 20 X-ray binaries used in this work.  The first 15 systems have
     low-mass secondaries that feed the black hole via Roche lobe
     overflow; the last five systems have high-mass secondaries ($q
     \gtrsim 1$) that feed the black hole via winds.  In each line, $f$
@@ -436,13 +469,13 @@ distribution have three or more parameters.  Exploring the entirety of
 these parameter spaces with a grid rapidly becomes prohibitive as the
 number of parameters increases.  A more efficient way to explore the
 distribution $p(\vtheta | d)$ is to use a Markov Chain Monte Carlo
-(MCMC) method.  MCMC methods produce a chain (sequence) of parameter
-samples, $\{ \vtheta_i \, | \, i = 1, \ldots \}$, such that a
-particular parameter sample, $\vtheta$, appears in the sequence with a
-frequency equal to its posterior probability, $p(\vtheta|d)$.  In this
-way, regions of parameter space where $p(\vtheta|d)$ is large are
-sampled densely while regions where $p(\vtheta|d)$ is small are
-effectively ignored.
+(MCMC) method (see Appendix \ref{sec:mcmc}).  MCMC methods produce a
+chain (sequence) of parameter samples, $\{ \vtheta_i \, | \, i = 1,
+\ldots \}$, such that a particular parameter sample, $\vtheta$,
+appears in the sequence with a frequency equal to its posterior
+probability, $p(\vtheta|d)$.  In this way, regions of parameter space
+where $p(\vtheta|d)$ is large are sampled densely while regions where
+$p(\vtheta|d)$ is small are effectively ignored.
 
 Once we have a chain of samples from $p(\vtheta|d)$, the distribution
 for any quantity of interest can be computed by evaluating it on each
@@ -461,7 +494,7 @@ the analysis through both the shape and the range of prior support in
 parameter space.  The prior should reflect the ``best guess'' for the
 distribution of parameters before examining any of the data.  In the
 absence of any information about the distribution of parameters, it is
-best to choose a prior that is broad and uniformative to avoid biasing
+best to choose a prior that is broad and uninformative to avoid biasing
 the posterior as much as possible.
 
 A prior that is independent of parameters, $\vtheta$, in some region,
@@ -545,8 +578,7 @@ Equation \eqref{eq:likelihood-def}.
 mass in simulations of supernova explosions.  Combining this with the
 mass function for supernova progenitors, they suggested that the
 black-hole mass distribution may be well-represented by a decaying
-exponential with a minimum mass: \fixme{Vicky, do you want to say
-  anything more here?}
+exponential with a minimum mass: 
 \begin{equation}
   \label{eq:exp-def}
   p(M|\vtheta) = p(M|\{\Mmin, M_0\}) = 
@@ -607,10 +639,10 @@ black-hole mass distribution, we use a two-Gaussian model:
         \mu_1}{\sqrt{2}\sigma_1} \right)^2 \right] + \frac{1-\alpha}{\sigma_2 \sqrt{2\pi}} \exp\left[ - \left( \frac{M -
         \mu_2}{\sqrt{2}\sigma_2} \right)^2 \right].
 \end{multline}
-The probability is a linear combination of two Gaussians with weight
-$\alpha$.  We restrict $\mu_1 < \mu_2$ and also impose combined
-conditions on $\mu_i$ and $\sigma_i$ that ensure that most of the mass
-probability lies below $40 \Msun$ with the prior 
+The probability is a linear combination of two Gaussians with weights
+$\alpha$ and $1-\alpha$.  We restrict $\mu_1 < \mu_2$ and also impose
+combined conditions on $\mu_i$ and $\sigma_i$ that ensure that most of
+the mass probability lies below $40 \Msun$ with the prior
 \begin{equation}
   p(\{\mu_1, \mu_2, \sigma_1, \sigma_2, \alpha\}) = 
   \begin{cases}
@@ -1083,15 +1115,15 @@ here.
 
 Figure \ref{fig:two-gaussian} shows the marginalized distributions for
 the two-Gaussian model parameters from our MCMC runs.  We find $\alpha
-> 0.8$ with 62\% probability, clearly favoring the first Gaussian.
-The distributions for $\mu_1$ and $\sigma_1$ are similar to those of
-the single Gaussian displayed in Figure \ref{fig:gaussian}, indicating
-that the first Gaussian is centered around the peaks of the low-mass
-distributions.  The second Gaussian's parameter distributions are much
-broader.  The second Gaussian appears to be sampling the tail of the
-mass samples.  In spite of the ability to match a more complicated
-distribution, we find that this model is strongly disfavored relative
-to the single-Gaussian model for this dataset:
+> 0.8$ with 62\% probability, clearly favoring the Gaussian with
+smaller mean.  The distributions for $\mu_1$ and $\sigma_1$ are
+similar to those of the single Gaussian displayed in Figure
+\ref{fig:gaussian}, indicating that this Gaussian is centered around
+the peaks of the low-mass distributions.  The second Gaussian's
+parameter distributions are much broader.  The second Gaussian appears
+to be sampling the tail of the mass samples.  In spite of the extra
+degrees of freedom in this model, we find that this model is strongly
+disfavored relative to the single-Gaussian model for this dataset:
 $p(\textnormal{Gaussian}|d) / p(\textnormal{Two Gaussian}|d) \simeq
 4.7$ (see Sections \ref{sec:model-selection} and
 \ref{sec:low-mass-model-selection} for discussion).
@@ -1209,7 +1241,7 @@ discussion).  This occurs because the extra fitting power does not
 sufficiently improve the fit to compensate for the vastly larger
 parameter space of the models with more bins.
 
-\subsubsection{Low-Mass Model Selection}
+\subsubsection{Model Selection for the Low-Mass Sample}
 \label{sec:low-mass-model-selection}
 We have performed a suite of 500 independent reversible-jump MCMCs
 jumping between all the models (both parametric and non-parametric)
@@ -1230,13 +1262,13 @@ the average probability for each model across the suite of MCMCs.
   \caption{\label{fig:rj} The relative probability of the models
     discussed in Section \ref{sec:models} as computed using the
     reversible-jump MCMC with the efficient jump proposal algorithm
-    described in Section \ref{sec:reversible-jump-mcmc}.  In
-    increasing order along the $x$-axis, the models are the power-law
-    of Section \ref{sec:power-law} (PL), the decaying exponential of
-    Section \ref{sec:exponential} (E), the single Gaussian of Section
-    \ref{sec:gaussian} (G), the double Gaussian of Section
-    \ref{sec:gaussian} (TG), and the one-, two-, three-, four-, and
-    five-bin histogram models of Section
+    described in Section \ref{sec:reversible-jump-mcmc}.  (See also
+    Table \ref{tab:rj}.)  In increasing order along the $x$-axis, the
+    models are the power-law of Section \ref{sec:power-law} (PL), the
+    decaying exponential of Section \ref{sec:exponential} (E), the
+    single Gaussian of Section \ref{sec:gaussian} (G), the double
+    Gaussian of Section \ref{sec:gaussian} (TG), and the one-, two-,
+    three-, four-, and five-bin histogram models of Section
     \ref{sec:non-parametric-models} (H1, H2, H3, H4, H5,
     respectively).  The average of 500 independent reversible-jump
     MCMCs is plotted, along with the 1-$\sigma$ error on the average
@@ -1285,7 +1317,7 @@ The most favored model is the power law from Section
     \end{tabular}
   \end{center}
   \caption{\label{tab:rj} Relative probabilities of the various models
-    from Section \ref{sec:models} implied by the low-mass data.  These probabilities have been 
+    from Section \ref{sec:models} implied by the low-mass data.  (See also Figure \ref{fig:rj}.)  These probabilities have been 
     computed from reversible-jump
     MCMC samples using the efficient jump proposal algorithm in Appendix \ref{sec:reversible-jump-mcmc}.}
 \end{table}
@@ -1311,8 +1343,8 @@ to first place.  Of course, we would then have to modify the prior
 support for the other models to take into account the restriction that
 there must be black holes with $M \lesssim 10\Msun$....
 \citet{Linder2008} discuss these issues in the context of cosmological
-model selection, concluding with a similar warning against
-over-reliance on model selection probabilities.
+model selection, concluding with a warning against over-reliance on
+model selection probabilities.
 
 Nevertheless, we believe that our model comparison is reasonably fair
 (see the discussion of priors in Section \ref{sec:priors}).  It seems
@@ -1379,17 +1411,18 @@ Section \ref{sec:power-law} and displayed in Figure
     \plotone{plots/power-law-high}
   \end{center}
   \caption{\label{fig:power-law-high} Histograms of the marginalized
-    distribution for the three parameters $\Mmin$ (top, left), $\Mmax$
-    (top, right), and $\alpha$ (bottom) from the power-law model
-    including the higher-mass samples in the MCMC.  The distribution
-    for $\Mmax$ is quite broad because the best fit power laws slope
-    downward ($\alpha < 0$), making this parameter less relevant.  The
-    range $-5.05 \leq \alpha \leq -1.77$ encloses 90\% of the
-    probability; the median value of $\alpha$ is -3.23.  The presence
-    of the higher-mass samples in the analysis produces a distinctive
-    tail, eliminating the correlations discussed in Section
-    \ref{sec:power-law} and displayed in Figure \ref{fig:power-law-2D}
-    for the low-mass subset of the observations. }
+    distribution for the three parameters $\Mmin$ (top, dashed
+    histogram), $\Mmax$ (top, solid histogram), and $\alpha$ (bottom)
+    from the power-law model including the higher-mass samples in the
+    MCMC.  The distribution for $\Mmax$ is quite broad because the
+    best fit power laws slope downward ($\alpha < 0$), making this
+    parameter less relevant.  The range $-5.05 \leq \alpha \leq -1.77$
+    encloses 90\% of the probability; the median value of $\alpha$ is
+    -3.23.  The presence of the higher-mass samples in the analysis
+    produces a distinctive tail, eliminating the correlations
+    discussed in Section \ref{sec:power-law} and displayed in Figure
+    \ref{fig:power-law-2D} for the low-mass subset of the
+    observations. }
 \end{figure}
 
 \subsubsection{Decaying Exponential}
@@ -1618,7 +1651,7 @@ systems; compare to Table \ref{tab:low-mass-non-parametric}.
     here as well; compare to Table \ref{tab:low-mass-non-parametric}.}
 \end{table}
 
-\subsubsection{High-Mass Model Selection}
+\subsubsection{Model Selection for the Complete Sample}
 \label{sec:high-mass-model-selection}
 
 Repeating the model selection analysis discussed in Section
@@ -1629,13 +1662,14 @@ for this analysis that the model priors are equal.
 
 Reversible jump MCMC calculations of the model probabilities are
 displayed in Figure \ref{fig:high-rj-evidence}; compare Figure
-\ref{fig:rj}.  The exponential model is the most favored model for the
-complete sample, with the two-Gaussian model the second-most favored.
-The ranking of models differs significantly from the low-mass
-samples.  The improvement of the exponential model relative to the
-low-mass analysis is encouraging for theoretical calculations that
-attempt to model the entire population of X-ray binaries with this
-mass model.  Note also that the increasing structure of the mass
+\ref{fig:rj}.  The relative model probabilities are given in Table
+\ref{tab:rj-high}.  The exponential model is the most favored model
+for the complete sample, with the two-Gaussian model the second-most
+favored.  The ranking of models differs significantly from the
+low-mass samples.  The improvement of the exponential model relative
+to the low-mass analysis is encouraging for theoretical calculations
+that attempt to model the entire population of X-ray binaries with
+this mass model.  Note also that the increasing structure of the mass
 distribution favors histogram models with three bins over those with
 fewer bins.
 
@@ -1648,19 +1682,57 @@ fewer bins.
     the reversible-jump MCMC with the efficient jump proposal
     algorithm described in Section \ref{sec:reversible-jump-mcmc},
     applied to all 20 systems in Table \ref{tab:sources} (i.e.\
-    including the higher-mass systems).  In increasing order along the
-    $x$-axis, the models are the power-law of Section
-    \ref{sec:power-law} (PL), the decaying exponential of Section
-    \ref{sec:exponential} (E), the single Gaussian of Section
-    \ref{sec:gaussian} (G), the double Gaussian of Section
-    \ref{sec:gaussian} (TG), and the one-, two-, three-, four-, and
-    five-bin histogram models of Section
+    including the higher-mass systems).  (See also Table
+    \ref{tab:rj-high}.)  In increasing order along the $x$-axis, the
+    models are the power-law of Section \ref{sec:power-law} (PL), the
+    decaying exponential of Section \ref{sec:exponential} (E), the
+    single Gaussian of Section \ref{sec:gaussian} (G), the double
+    Gaussian of Section \ref{sec:gaussian} (TG), and the one-, two-,
+    three-, four-, and five-bin histogram models of Section
     \ref{sec:non-parametric-models} (H1, H2, H3, H4, H5,
     respectively).  The average of 500 independent reversible-jump
     MCMCs is plotted, along with the 1-$\sigma$ error on the average
     inferred from the standard deviation of the probability from the
     individual MCMCs.  Compare to Figure \ref{fig:rj}.}
 \end{figure}
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{|l|r|}
+      \hline
+      Model & Relative Evidence \\
+      \hline \hline
+      Exponential (Section \ref{sec:exponential}) & 0.346944 \\
+      \hline
+      Two Gaussian (Section \ref{sec:gaussian}) & 0.304923 \\
+      \hline
+      Power Law (Section \ref{sec:power-law}) & 0.120313 \\
+      \hline
+      Log Normal (Section \ref{sec:log-normal}) & 0.102536 \\
+      \hline
+      Histogram (3 Bin, Section \ref{sec:non-parametric-models}) &
+      0.0473464 \\
+      \hline
+      Histogram (4 Bin, Section \ref{sec:non-parametric-models}) &
+      0.0282086 \\
+      \hline 
+      Histogram (2 Bin, Section \ref{sec:non-parametric-models}) &
+      0.0210994 \\
+      \hline 
+      Histogram (5 Bin, Section \ref{sec:non-parametric-models}) &
+      0.0179703  \\
+      \hline      
+      Gaussian (Section \ref{sec:gaussian}) & 0.00901719 \\ 
+      \hline
+      Histogram (1 Bin, Section \ref{sec:non-parametric-models}) &
+      0.00164214 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:rj-high} Relative probabilities of the various models
+    from Section \ref{sec:models} implied by the complete sample of systems.  (See also Figure \ref{fig:high-rj-evidence}.)  These probabilities have been 
+    computed from reversible-jump MCMC samples using the efficient jump proposal algorithm in Appendix \ref{sec:reversible-jump-mcmc}.}
+\end{table}
 
 
 \section{The Minimum Black Hole Mass}
@@ -1678,81 +1750,152 @@ black hole mass is significantly above the maximum neutron star mass
   \citet{Ozel2010} only state their evidence for a gap in terms of the
   maximum-posterior parameters for their distributions)}.
 
-The distribution of the minimum black hole mass from the analysis of
-the low-mass samples is displayed in Figure \ref{fig:min-mass}.  For
-all distributions, the minimum black hole mass is defined as the 1\%
-mass quantile (i.e.\ the mass lying below 99\% of the mass
-distribution).  (A cutoff quantile is necessary in the case of those
-distributions that do not have a hard cutoff mass; even for those that
-do, like the power-law model, it can be useful to define a ``soft''
-cutoff in the event that the lower mass hard cutoff becomes an
-irrelevant parameter as discussed in Section \ref{sec:power-law}.)
+The distributions of the minimum black hole mass from the analysis of
+the low-mass samples is displayed in Figure \ref{fig:min-mass}.  The
+minimum black hole mass is defined as the 1\% mass quantile,
+$M_{1\%}$, of the black-hole mass distribution (i.e.\ the mass lying
+below 99\% of the mass distribution).  (A quantile-based definition is
+necessary in the case of those distributions that do not have a hard
+cutoff mass; even for those that do, like the power-law model, it can
+be useful to define a ``soft'' cutoff in the event that the lower mass
+hard cutoff becomes an irrelevant parameter as discussed in Section
+\ref{sec:power-law}.)  \changed{For each mass distribution parameter
+  sample from our MCMC, we can calculate the distribution's minimum
+  black hole mass; the collection of these minimum black hole masses
+  approximates the distribution of minimum black hole masses implied
+  by the data in the context of that distribution.  Figure
+  \ref{fig:min-mass} plots histograms of the minimum black hole mass
+  samples.}
 
 \begin{figure}
   \begin{center}
     \plotone{plots/mmin}
   \end{center}
   \caption{\label{fig:min-mass} The distributions for the minimum
-    black hole mass calculated from the MCMC samples for the models in
-    Section \ref{sec:models} applied to the low-mass systems.  The
-    minimum black hole mass is defined as the 1\% mass quantile.  For
-    the most favored models, the power-law and Gaussian, the 90\%
-    confidence limit on the minimum black hole mass is 4.3 $\Msun$ and
-    2.9 $\Msun$, respectively.  In all plots, we indicate the 90\%
-    confidence limit on the minimum black hole mass with a vertical
-    line.}
+    black hole mass, $M_{1\%}$, calculated from the MCMC samples for
+    the models in Section \ref{sec:models} applied to the low-mass
+    systems.  For the most favored models, the power-law and Gaussian,
+    the 90\% confidence limit on the minimum black hole mass is 4.3
+    $\Msun$ and 2.9 $\Msun$, respectively.  In all plots, we indicate
+    the 90\% confidence bound (i.e.\ the 10\% quantile) on the minimum
+    black hole mass with a vertical line.}
 \end{figure}
 
-We find that the best-fit model for the low-mass systems (the
-power-law) has a 90\% confidence limit on the minimum black hole mass
-of 4.3 $\Msun$.  This is significantly above the maximum
-theoretically-allowed neutron star mass, $\sim 3 \Msun$ (e.g.\
-\citet{Kalogera1996}).  Hence we conclude that the low-mass systems
-show strong evidence of a mass gap.
+\changed{We find that the best-fit model for the low-mass systems (the
+  power-law) has $M_{1\%} > 4.3$ $\Msun$ in 90\% of the MCMC samples
+  (i.e.\ at 90\% confidence).  This is significantly above the maximum
+  theoretically-allowed neutron star mass, $\sim 3 \Msun$ (e.g.\
+  \citet{Kalogera1996}).  Hence we conclude that the low-mass systems
+  show strong evidence of a mass gap.
 
-The distribution of minimum black hole masses for the analysis of the
-complete sample (i.e.\ including the higher-mass systems) is shown in
-Figure \ref{fig:high-min-mass}.  For the most favored model, the
-exponential, the 90\% confidence limit on the minimum black hole mass
-is 4.5 $\Msun$.  We therefore conclude that there is strong evidence
-for a mass gap in the complete sample as well.
+  The distribution of minimum black hole masses for the analysis of
+  the complete sample (i.e.\ including the higher-mass systems) is
+  shown in Figure \ref{fig:high-min-mass}.  For the most favored
+  model, the exponential, we find that $M_{1\%} > 4.5$ $\Msun$ with
+  90\% confidence.  We therefore conclude that there is strong
+  evidence for a mass gap in the complete sample as well.}
 
 \begin{figure}
 \begin{center}
     \plotone{plots/mmin-high}
   \end{center}
   \caption{\label{fig:high-min-mass} The distributions for the minimum
-    black hole mass calculated from the MCMC samples for the models in
-    Section \ref{sec:models} using the complete sample of systems.
-    The minimum black hole mass is defined as the 1\% mass quantile.
-    For the two most favored models, the exponential and two-Gaussian,
-    the 90\% confidence limit on the minimum black hole mass is 4.5
-    $\Msun$ and 2.3 $\Msun$, respectively.  For every model, we
-    indicate the 90\% confidence limit on the minimum black hole mass
-    with a vertical line.}
+    black hole mass, $M_{1\%}$, calculated from the MCMC samples for
+    the models in Section \ref{sec:models} using the complete sample
+    of systems.  For the two most favored models, the exponential and
+    two-Gaussian, the 90\% confidence limit on the minimum black hole
+    mass is 4.5 $\Msun$ and 2.3 $\Msun$, respectively.  For every
+    model, we indicate the 90\% confidence bound on the minimum black
+    hole mass with a vertical line.}
 \end{figure}
 
+\changed{Table \ref{tab:mmin-quants} gives the 10\%, 50\% (median),
+  and 90\% quantiles for the minimum black hole mass implied by the
+  low-mass sample; Table \ref{tab:mmin-quants-high} gives the same,
+  but for the complete sample of systems.}
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{|l|l|c|r|}
+      \hline
+      Model & 10\% & 50\% & 90\% \\
+      \hline \hline
+      Power Law (Section \ref{sec:power-law}) & 4.3 & 6.1 & 6.6 \\
+      \hline
+      Gaussian (Section \ref{sec:gaussian}) & 2.9 & 4.4 & 5.5 \\
+      \hline 
+      Log Normal (Section \ref{sec:log-normal}) & 3.9 & 4.9 & 5.8 \\
+      \hline 
+      Exponential (Section \ref{sec:exponential}) & 5.3 & 6.0 & 6.5 \\
+      \hline 
+      Two Gaussian (Section \ref{sec:gaussian}) & 2.4 & 4.2 & 5.5 \\
+      \hline 
+      Histogram (1 Bin, Section \ref{sec:non-parametric-models}) & 4.4 & 5.5 & 6.2 \\
+      \hline
+      Histogram (2 Bin, Section \ref{sec:non-parametric-models}) & 4.0 & 5.4 & 6.3 \\
+      \hline 
+      Histogram (3 Bin, Section \ref{sec:non-parametric-models}) & 3.2 & 5.2 & 6.3 \\
+      \hline
+      Histogram (4 Bin, Section \ref{sec:non-parametric-models}) & 2.4 & 4.7 & 6.0 \\
+      \hline
+      Histogram (5 Bin, Section \ref{sec:non-parametric-models}) & 1.9 & 4.4 & 6.0 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:mmin-quants} The 10\%, 50\% (median), and 90\% quantiles for the minimum black hole mass (in units of $\Msun$) implied by the low-mass sample in the context of the various models for the black hole mass distribution.  The models are listed in order of preference from model selection (Section \ref{sec:low-mass-model-selection}, Figure \ref{fig:rj}, and Table \ref{tab:rj}).}
+\end{table}
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{|l|l|c|r|}
+      \hline
+      Model & 10\% & 50\% & 90\% \\
+      \hline \hline
+      Exponential (Section \ref{sec:exponential}) & 4.5 & 5.4 & 6.1 \\
+      \hline
+      Two Gaussian (Section \ref{sec:gaussian}) & 2.3 & 4.3 & 5.5 \\
+      \hline
+      Power Law (Section \ref{sec:power-law}) & 5.1 & 5.9 & 6.4 \\
+      \hline
+      Histogram (3 Bin, Section \ref{sec:non-parametric-models}) & 4.0 & 5.5 & 6.3 \\
+      \hline 
+      Histogram (4 Bin, Section \ref{sec:non-parametric-models}) & 3.4 & 5.3 & 6.4 \\
+      \hline
+      Histogram (2 Bin, Section \ref{sec:non-parametric-models}) & 4.4 & 5.5 & 6.2 \\
+      \hline
+      Histogram (5 Bin, Section \ref{sec:non-parametric-models}) & 2.8 & 5.0 & 6.2 \\
+      \hline
+      Gaussian (Section \ref{sec:gaussian}) & -0.64 & 1.4 & 3.4 \\
+      \hline 
+      Histogram (1 Bin, Section \ref{sec:non-parametric-models}) & 2.9 & 4.4 & 5.5 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:mmin-quants-high} The 10\%, 50\% (median), and 90\% quantiles for the distribution of minimum black hole masses (in units of $\Msun$) implied by the complete sample in the context of the various models for the black hole mass distribution.  The models are listed in order of preference from model selection (Section \ref{sec:high-mass-model-selection}, Figure \ref{fig:high-rj-evidence}, and Table \ref{tab:rj-high}). }
+\end{table}
+
 \section{Summary and Conclusion}
+\label{sec:conclusion}
 
 We have presented a Bayesian analysis of the mass distribution of
 stellar-mass black holes in X-ray binary systems.  We considered
 separately a sample of 15 low-mass, Roche lobe-filling systems and a
 sample of 20 systems containing the 15 low-mass systems and five
 higher-mass, wind-fed X-ray binaries.  We used MCMC methods to sample
-the posterior distributions of the parameters for five parametric
-models and five non-parametric (histogram) models for the mass
-distribution that are implied by these data.  For both sets of
-samples, we used reversible jump MCMCs (exploiting a new algorithm for
-efficient jump proposals in such calculations) to perform model
-selection on the suite of models.  \changed{The consideration of a
-  broad range of models and the model-selection analysis, along with
-  consideration of the full posterior distribution on the minimum
-  black hole mass significantly expand earlier analyses of black hole
-  mass measurements \citep{Bailyn1998,Ozel2010}.}
+the posterior distributions of the parameters implied by the data for
+five parametric models and five non-parametric (histogram) models for
+the mass distribution.  For both sets of samples, we used reversible
+jump MCMCs (exploiting a new algorithm for efficient jump proposals in
+such calculations) to perform model selection on the suite of models.
+\changed{The consideration of a broad range of models and the
+  model-selection analysis, along with consideration of the full
+  posterior distribution on the minimum black hole mass significantly
+  expand earlier analyses of black hole mass measurements
+  \citep{Bailyn1998,Ozel2010}.}
 
 For the low-mass systems, we found the limits on model parameters in
 Tables \ref{tab:low-mass-parametric} and
-\ref{tab:low-mass-non-parametric}.  The relative model probabilites
+\ref{tab:low-mass-non-parametric}.  The relative model probabilities
 from the model selection are given in Table \ref{tab:rj}.  The most
 favored model for the low-mass systems is a power law.  The equivalent
 limits on the model parameters for the combined systems are given in
@@ -1803,19 +1946,22 @@ quantile lise above $4.5 \Msun$ with 90\% confidence.
   black hole mass distribution that rises toward low masses.
   Population synthesis models incorporating sophisticated treatment of
   binary evolution and transient behavior (e.g.\
-  \citet{Fragos2008,Fragos2009}) could help settle this possibility.}
+  \citet{Fragos2008,Fragos2009}) could help shed light on this
+  possibility.}
 
 \acknowledgements
 
-This work was supported by grant \fixme{XXX}.  IM acknowledges support
-from the NSF AAPF under award AST-0901985.  Calculations for this work
-were performed on the Northwestern Fugu cluster, which was partially
-funded by NSF MRI grant \fixme{XXX}.  We thank Jonathan Gair for
-helpful discussions.
+AC, LK, and CB are supported by NSF grant NSF/AST-0707627.  WMF, NS,
+and VK are supported by \fixme{XXX}.  IM acknowledges support from the
+NSF AAPF under award AST-0901985.  Calculations for this work were
+performed on the Northwestern Fugu cluster, which was partially funded
+by NSF MRI grant \fixme{XXX}.  We thank Jonathan Gair for helpful
+discussions.
 
 \appendix
 
 \section{Markov Chain Monte Carlo}
+\label{sec:mcmc}
 
 MCMC methods produce a Markov chain (or sequence) of parameter
 samples, $\{ \vtheta_i \, | \, i = 1, \ldots \}$, such that a particular
@@ -1845,7 +1991,7 @@ the physical sciences thereafter:
         \vtheta_i)}{Q(\vtheta_i \to \vtheta_p)}
     \end{equation}
   \item With probability $\min(1,p_{\textnormal{accept}})$ ``accept''
-    the propsed $\vtheta_p$, setting $\vtheta_{i+1} = \vtheta_p$;
+    the proposed $\vtheta_p$, setting $\vtheta_{i+1} = \vtheta_p$;
     otherwise set $\vtheta_{i+1} = \vtheta_i$.
 \end{enumerate}
 This algorithm is more likely to accept a proposed jump when it
