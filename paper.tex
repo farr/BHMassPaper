@@ -67,31 +67,30 @@
   provide confidence bounds on the shape of the mass distribution in
   the context of each model and compare the models with each other by
   calculating their relative Bayesian evidence as supported by the
-  measurements, \changed{taking into account the number of degrees of
-    freedom of each model.}  The mass distribution of the low-mass
-  systems is best fit by a power-law, while the distribution of the
-  complete sample is best fit by the exponential model.  \changed{This
-    difference clearly indicates that the character of the low mass
-    X-ray binary systems differs from the higher-mass systems.}  We
-  examine the existence of a ``gap'' between the most massive neutron
-  stars and least massive black holes.  \changed{Our analysis
-    generates distributions of lower bounds on the black hole mass
-    distribution; we use the 1\% quantile of the mass distribution,
-    $M_{1\%}$, for a lower bound because some of our distributions do
-    not have a sharp lower limit.  For the best model (the power law)
-    fitted to the low-mass systems this distribution of lower-bounds
-    has $M_{1\%} > 4.3$ $\Msun$ with 90\% confidence, while the best
-    model (the exponential) fitted to all 20 systems has $M_{1\%} >
-    4.5$ $\Msun$ with 90\% confidence.}  We conclude that our sample
-  of black hole masses provides strong evidence of a gap between the
-  maximum neutron star mass and \changed{the lower bound on} black
-  hole masses.  \changed{Our results on the low-mass sample are in
-    qualitative agreement with those of \citet{Ozel2010}, although our
-    broad model selection analysis more reliably reveals the best-fit
-    quantitative description of the underlying mass distribution.  The
-    results on the complete sample of low- and higher-mass systems are
-    in qualitative agreement with \citet{Fryer2001} although the
-    presence of a mass gap remains theoretically unexplained.}
+  measurements, taking into account the number of degrees of freedom
+  of each model.  The mass distribution of the low-mass systems is
+  best fit by a power-law, while the distribution of the combined
+  sample is best fit by the exponential model.  This difference
+  indicates that the low-mass subsample is not consistent with being
+  drawn from the distribution of the combined population.  We examine
+  the existence of a ``gap'' between the most massive neutron stars
+  and the least massive black holes by considering the value,
+  $M_{1\%}$, of the 1\% quantile from each black hole mass
+  distribution as the lower bound of black hole masses.  Our analysis
+  generates posterior distributions for $M_{1\%}$; the best model (the
+  power law) fitted to the low-mass systems has a distribution of
+  lower-bounds with $M_{1\%} > 4.3$ $\Msun$ with 90\% confidence,
+  while the best model (the exponential) fitted to all 20 systems has
+  $M_{1\%} > 4.5$ $\Msun$ with 90\% confidence.  We conclude that our
+  sample of black hole masses provides strong evidence of a gap
+  between the maximum neutron star mass and the lower bound on black
+  hole masses.  Our results on the low-mass sample are in qualitative
+  agreement with those of \citet{Ozel2010}, although our broad
+  model-selection analysis more reliably reveals the best-fit
+  quantitative description of the underlying mass distribution.  The
+  results on the combined sample of low- and higher-mass systems are
+  in qualitative agreement with \citet{Fryer2001} although the
+  presence of a mass gap remains theoretically unexplained.
 \end{abstract}
 
 \maketitle
@@ -108,59 +107,52 @@ calculations of rates of gravitational wave emission events from
 coalescing neutron star-black hole and black hole-black hole binaries
 in the LIGO gravitational wave observatory \citep{Abadie2010}.
 
-Observations of low-mass X-ray binaries in both the optical and X-ray
-can provide a measurement of the mass of the compact object in these
-systems.  \changed{The current sample of stellar mass black holes with
-  dynamically measured masses includes 15 low-mass, Roche lobe
-  overflowing systems and 5 wind-fed higher-mass systems.  Hence,
-  sophisticated statistical analyses of the black hole mass
-  distribution in these systems are possible.}
+Observations of X-ray binaries in both the optical and X-ray bands can
+provide a measurement of the mass of the compact object in these
+systems.  The current sample of stellar mass black holes with
+dynamically measured masses includes 15 systems with low-mass, Roche
+lobe overflowing donors and 5 wind-fed systems with higher-mass
+donors.  Hence, sophisticated statistical analyses of the black hole
+mass distribution in these systems are possible.
 
 The first study of the mass distribution of stellar-mass black holes,
 in \citet{Bailyn1998}, examined a sample of seven low-mass X-ray
 binaries thought to contain a black hole, concluding in a Bayesian
 analysis that the mass function was strongly peaked around seven solar
-masses.  \changed{(A similar analysis of the neutron star mass
-  distribution can be found in \citet{Finn1994}.)}  \citet{Bailyn1998}
-found evidence of a ``gap'' between the least massive black hole and a
-``safe'' upper limit for neutron star masses of 3 $\Msun$ (e.g.\
-\citet{Kalogera1996}).  Such a gap is puzzling in light of theoretical
-studies that predict a continuous distribution of compact object
-supernova remnant masses with a smooth transition from neutron stars
-to black holes \citep{Fryer2001}.  \changed{(But note that
-  \citet{Fryer2001} considered binary evolution effects only
-  heuristically and put forward some possible explanations for the gap
-  from \citet{Bailyn1998} both in the context of selection effects or
-  in connection to the energetics of supernova explosions.)}
+masses%
+\footnote{A similar analysis of the neutron star mass distribution can
+  be found in \citet{Finn1994}.}. %
+\citet{Bailyn1998} found evidence of a ``gap'' between the least
+massive black hole and a ``safe'' upper limit for neutron star masses
+of 3 $\Msun$ (e.g.\ \citet{Kalogera1996}).  Such a gap is puzzling in
+light of theoretical studies that predict a continuous distribution of
+compact object supernova remnant masses with a smooth transition from
+neutron stars to black holes \citep{Fryer2001}.  (We note that
+\citet{Fryer2001} considered binary evolution effects only
+heuristically and put forward some possible explanations for the gap
+from \citet{Bailyn1998} both in the context of selection effects or in
+connection to the energetics of supernova explosions.)
 
-\changed{Towards the end of our analysis work, we became aware of a
-  more recent study \citep{Ozel2010}, also in a Bayesian framework,
-  analyzing the low-mass X-ray binary sample.}  It largely confirmed
-these findings, examining 16 low-mass X-ray binary systems containing
-black holes and finding a strongly peaked distribution at $7.8 \pm 1.2
-\, \Msun$.  \citet{Ozel2010} use two models for the mass function: a
-Gaussian and a decaying exponential with a minimum ``turn-on'' mass
-(motivated by the analytical model of the black-hole mass function in
-\citet{Fryer2001}).  \changed{\citet{Ozel2010} do not provide
-  confidence limits for the minimum black hole mass, instead
-  discussing only the model parameters at the peak of their posterior
-  distributions.  They also do not perform any model selection
-  analysis; thus, they give the distribution of parameters within each
-  of their models, but cannot say which model is more likely to
-  correspond to the true distribution of black hole masses.}
-Nevertheless, it appears that their analysis confirms the existence of
-a mass gap.  \citet{Ozel2010} discuss possible selection effects that
-could lead to the appearance of a mass gap, but conclude these effects
-could not produce the observed gap, which they therefore claim is a
-real property of the black hole mass distribution.
-
-In this work, we use observations of 20 galactic X-ray binaries that
-contain black holes to constrain the mass function for stellar mass
-black holes.  We consider separately 15 low-mass X-ray binaries
-containing Roche-lobe-filling secondaries with masses smaller than the
-black hole primary, and a sample including these systems and five
-higher-mass, wind-fed systems where the secondary is heavier than the
-black hole primary.
+Towards the end of our analysis work, we became aware of a more recent
+study \citep{Ozel2010}, also in a Bayesian framework, analyzing the
+low-mass X-ray binary sample.  Our results are largely consistent with
+those obtained by \citet{Ozel2010}, who examined 16 low-mass X-ray
+binary systems containing black holes and found a strongly peaked
+distribution at $7.8 \pm 1.2 \, \Msun$.  They used two models for the
+mass function: a Gaussian and a decaying exponential with a minimum
+``turn-on'' mass (motivated by the analytical model of the black-hole
+mass function in \citet{Fryer2001}).  We note that \citet{Ozel2010} do
+not provide confidence limits for the minimum black hole mass, instead
+discussing only the model parameters at the peak of their posterior
+distributions.  They also do not perform any model selection analysis;
+thus, they give the distribution of parameters within each of their
+models, but cannot say which model is more likely to correspond to the
+true distribution of black hole masses.  Nevertheless, it appears that
+their analysis confirms the existence of a mass gap.  \citet{Ozel2010}
+discuss possible selection effects that could lead to the appearance
+of a mass gap, but conclude these effects could not produce the
+observed gap, which they therefore claim is a real property of the
+black hole mass distribution.
 
 We use a Bayesian Markov-Chain Monte Carlo (MCMC) analysis to
 quantitatively assess a wide range of models for the black hole mass
@@ -173,54 +165,53 @@ use model selection techniques (including a new technique for
 efficient reversible-jump MCMC \citep{Farr2010}) to compare the
 evidence for the various models from both samples.
 
-\changed{We define the ``minimum black hole mass'' to be the 1\%
-  quantile, $M_{1\%}$, in the black hole mass distribution (see
-  Section \ref{sec:minimum-mass}).  In agreement with \citet{Ozel2010}
-  and \citet{Bailyn1998}, we find strong evidence for a mass gap among
-  the best models for both samples.  Our analysis gives distributions
-  for $M_{1\%}$ implied by the data in the context of each of our
-  models for the black hole mass distribution.  In the context of the
-  best model for the low-mass systems (a power-law), the distribution
-  for $M_{1\%}$ has $M_{1\%} > 4.3$ $\Msun$ (at 90\% confidence); in
-  the context of the best model for the combined sample of lower- and
-  high-mass systems the distribution of $M_{1\%}$ has $M_{1\%} > 4.5$
-  $\Msun$ with 90\% confidence.  Further, in the context of models
-  with lower evidence, most also have a mass gap, with 90\% confidence
-  bounds on $M_{1\%}$ significantly above a ``safe'' maximum neutron
-  star mass of 3 $\Msun$ \citep{Kalogera1996}.}
+We define the ``minimum black hole mass'' to be the 1\% quantile,
+$M_{1\%}$, in the black hole mass distribution (see Section
+\ref{sec:minimum-mass}).  In qualitative agreement with
+\citet{Ozel2010} and \citet{Bailyn1998}, we find strong evidence for a
+mass gap among the best models for both samples.  Our analysis gives
+distributions for $M_{1\%}$ implied by the data in the context of each
+of our models for the black hole mass distribution.  In the context of
+the best model for the low-mass systems (a power-law), the
+distribution for $M_{1\%}$ gives $M_{1\%} > 4.3$ $\Msun$ with 90\%
+confidence; in the context of the best model for the combined sample
+of lower- and high-mass systems the distribution of $M_{1\%}$ has
+$M_{1\%} > 4.5$ $\Msun$ with 90\% confidence.  Further, in the context
+of models with lower evidence, most also have a mass gap, with 90\%
+confidence bounds on $M_{1\%}$ significantly above a ``safe'' maximum
+neutron star mass of 3 $\Msun$ \citep{Kalogera1996}.
 
-\changed{We find that, for the low-mass X-ray binary sample, the
-  theoretical model from \citet{Fryer2001}, a decaying exponential is
-  strongly disfavored by our model selection.  We find that the
-  low-mass systems are best described by a power law, followed
-  closely by a Gaussian (which is the other model from
-  \citet{Ozel2010}).  On the other hand, we find that the theoretical
-  model from \citet{Fryer2001} is the preferred model for the combined
-  sample of low- and high-mass X-ray binaries.  A model with two
-  separate Gaussian peaks also has relatively high evidence for the
-  combined sample of systems.  The difference in best-fitting model
-  clearly indicates that the character of the low mass X-ray binary
-  systems differs from the higher-mass systems.}
+We find that, for the low-mass X-ray binary sample, the theoretical
+model from \citet{Fryer2001}---a decaying exponential---is strongly
+disfavored by our model selection.  We find that the low-mass systems
+are best described by a power law, followed closely by a Gaussian
+(which is the second model considered by \citet{Ozel2010}).  On the
+other hand, we find that the theoretical model from \citet{Fryer2001}
+is the preferred model for the combined sample of low- and high-mass
+X-ray binaries.  A model with two separate Gaussian peaks also has
+relatively high evidence for the combined sample of systems.  The
+difference in best-fitting model indicates that the low-mass subsample
+is not consistent with being drawn from the distribution of the
+combined population.
 
-\changed{The structure of this paper is as follows.  In Section
-  \ref{sec:systems} we discuss the 15 systems that comprise the
-  low-mass X-ray binary black hole sample and the 5 additional
-  higher-mass, wind-fed systems that make up the complete sample.  In
-  Section \ref{sec:models} we discuss the Bayesian techniques we use
-  to analyze the black hole mass distribution, the techniques we use
-  for model selection, and the parametric and non-parametric models we
-  will for the black hole mass distribution.  In Section
-  \ref{sec:results} we discuss the results of our analysis and model
-  selection.  In Section \ref{sec:minimum-mass} we discuss the
-  distribution of the minimum black hole mass implied by the analysis
-  of Section \ref{sec:results}.  In Section \ref{sec:conclusion} we
-  summarize our results and comment on the significance of the
-  observed mass gap in the context of theoretical models.  Appendix
-  \ref{sec:mcmc} describes MCMC techniques in some detail.  Appendix
-  \ref{sec:reversible-jump-mcmc} explains our novel algorithm for
-  efficiently performing the reversible jump MCMC computations used in
-  the model comparisons of Section \ref{sec:results} (but see also
-  \citet{Farr2010}).}
+The structure of this paper is as follows.  In Section
+\ref{sec:systems} we discuss the 15 systems that comprise the low-mass
+X-ray binary black hole sample and the 5 additional higher-mass,
+wind-fed systems that make up the combined sample.  In Section
+\ref{sec:models} we discuss the Bayesian techniques we use to analyze
+the black hole mass distribution, the techniques we use for model
+selection, and the parametric and non-parametric models we will for
+the black hole mass distribution.  In Section \ref{sec:results} we
+discuss the results of our analysis and model selection.  In Section
+\ref{sec:minimum-mass} we discuss the distribution of the minimum
+black hole mass implied by the analysis of Section \ref{sec:results}.
+In Section \ref{sec:conclusion} we summarize our results and comment
+on the significance of the observed mass gap in the context of
+theoretical models.  Appendix \ref{sec:mcmc} describes MCMC techniques
+in some detail.  Appendix \ref{sec:reversible-jump-mcmc} explains our
+novel algorithm for efficiently performing the reversible jump MCMC
+computations used in the model comparisons of Section
+\ref{sec:results} (but see also \citet{Farr2010}).
 
 \section{Systems}
 \label{sec:systems}
@@ -235,7 +226,7 @@ low- and higher-mass systems undoubtedly have different evolutionary
 tracks, and therefore it is reasonable that they would have different
 black-hole mass distributions.  We will first analyze the 15 low-mass
 systems alone (Section \ref{sec:results-low-mass}), and then the
-complete sample of 20 systems (Section \ref{sec:higher-mass}).
+combined sample of 20 systems (Section \ref{sec:higher-mass}).
 
 In each of these systems, spectroscopic measurements of the secondary
 star provide an orbital period for the system and a semi-amplitude for
@@ -396,7 +387,7 @@ remainder of this paper.
 
 In this section we describe the statistical analysis we will apply to
 various models for the underlying mass distribution from which the
-low-mass sample and the complete sample of X-ray binary systems in
+low-mass sample and the combined sample of X-ray binary systems in
 Table \ref{tab:sources} were drawn.  The results of our analysis are
 presented in Section \ref{sec:results}.
 
@@ -763,7 +754,7 @@ We consider histograms with up to five bins in this work.  We will see
 that the evidence for the histogram models (see Sections
 \ref{sec:model-selection}, \ref{sec:low-mass-model-selection}, and
 \ref{sec:high-mass-model-selection}) from both the low-mass and
-complete datasets is decreasing as the number of bins reaches five,
+combined datasets is decreasing as the number of bins reaches five,
 indicating that increasing the number of bins beyond five would not
 sufficiently improve the fit to the mass distribution to compensate
 for the extra parameter-space volume implied by the additional
@@ -891,7 +882,7 @@ posterior distributions of parameters for the models in Sections
 also discuss model selection results.  The results in Section
 \ref{sec:results-low-mass} apply to the low-mass sample of
 systems, while those of Section \ref{sec:higher-mass} apply to the
-complete sample of systems.
+combined sample of systems.
 
 \subsection{Low-Mass Systems}
 \label{sec:results-low-mass}
@@ -981,7 +972,7 @@ normalized.
     posterior $p(\theta|d)$ for the models discussed in Sections
     \ref{sec:parametric-models} and \ref{sec:non-parametric-models}.
     These distributions use only the 15 low-mass observations in Table
-    \ref{tab:sources} (the complete sample is analyzed in Section
+    \ref{tab:sources} (the combined sample is analyzed in Section
     \ref{sec:higher-mass}).  Note that these ``distributions of
     distributions'' are not necessarily normalized, and need not be
     shaped like the underlying model distributions.}
@@ -1356,7 +1347,7 @@ two-Gaussian model).  Previous studies have also supported the
 In this light, poor performance of the single-bin histogram is
 surprising.
 
-\subsection{Complete Sample}
+\subsection{Combined Sample}
 \label{sec:higher-mass}
 
 This section repeats the analysis of the models from Section
@@ -1380,7 +1371,7 @@ to the one in Figure \ref{fig:dists}.
     implied by the posterior $p(\theta|d)$ for the models discussed in
     Sections \ref{sec:parametric-models} and
     \ref{sec:non-parametric-models}.  These distributions use the
-    complete sample of 20 observations in Table \ref{tab:sources},
+    combined sample of 20 observations in Table \ref{tab:sources},
     including the higher-mass, wind-fed systems.  Note that these
     ``distributions of distributions'' are not necessarily normalized,
     and need not be ``shaped'' like the underlying model
@@ -1651,7 +1642,7 @@ systems; compare to Table \ref{tab:low-mass-non-parametric}.
     here as well; compare to Table \ref{tab:low-mass-non-parametric}.}
 \end{table}
 
-\subsubsection{Model Selection for the Complete Sample}
+\subsubsection{Model Selection for the Combined Sample}
 \label{sec:high-mass-model-selection}
 
 Repeating the model selection analysis discussed in Section
@@ -1664,7 +1655,7 @@ Reversible jump MCMC calculations of the model probabilities are
 displayed in Figure \ref{fig:high-rj-evidence}; compare Figure
 \ref{fig:rj}.  The relative model probabilities are given in Table
 \ref{tab:rj-high}.  The exponential model is the most favored model
-for the complete sample, with the two-Gaussian model the second-most
+for the combined sample, with the two-Gaussian model the second-most
 favored.  The ranking of models differs significantly from the
 low-mass samples.  The improvement of the exponential model relative
 to the low-mass analysis is encouraging for theoretical calculations
@@ -1730,7 +1721,7 @@ fewer bins.
     \end{tabular}
   \end{center}
   \caption{\label{tab:rj-high} Relative probabilities of the various models
-    from Section \ref{sec:models} implied by the complete sample of systems.  (See also Figure \ref{fig:high-rj-evidence}.)  These probabilities have been 
+    from Section \ref{sec:models} implied by the combined sample of systems.  (See also Figure \ref{fig:high-rj-evidence}.)  These probabilities have been 
     computed from reversible-jump MCMC samples using the efficient jump proposal algorithm in Appendix \ref{sec:reversible-jump-mcmc}.}
 \end{table}
 
@@ -1740,18 +1731,19 @@ fewer bins.
 
 It is interesting to use our models for the underlying black hole mass
 distribution in X-ray binaries to place constraints on the minimum
-black hole mass.  \citet{Bailyn1998} addressed this question in the
-context of a ``mass gap'' between the most massive neutron stars and
-the least massive black holes.  The more recent study of
-\citet{Ozel2010} also looked for a mass gap using a subset of the
-models and systems presented here.  Both works found that the minimum
-black hole mass is significantly above the maximum neutron star mass
-\citep{Kalogera1996} of $\sim 3 \Msun$ \changed{(though
-  \citet{Ozel2010} only state their evidence for a gap in terms of the
-  maximum-posterior parameters for their distributions)}.
+black hole mass implied by the present sample.  \citet{Bailyn1998}
+addressed this question in the context of a ``mass gap'' between the
+most massive neutron stars and the least massive black holes.  The
+more recent study of \citet{Ozel2010} also looked for a mass gap using
+a subset of the models and systems presented here.  Both works found
+that the minimum black hole mass is significantly above the maximum
+neutron star mass \citep{Kalogera1996} of $\sim 3 \Msun$ (though
+\citet{Ozel2010} only state their evidence for a gap in terms of the
+maximum-posterior parameters and not the full extent of their
+distributions).
 
 The distributions of the minimum black hole mass from the analysis of
-the low-mass samples is displayed in Figure \ref{fig:min-mass}.  The
+the low-mass samples are displayed in Figure \ref{fig:min-mass}.  The
 minimum black hole mass is defined as the 1\% mass quantile,
 $M_{1\%}$, of the black-hole mass distribution (i.e.\ the mass lying
 below 99\% of the mass distribution).  (A quantile-based definition is
@@ -1759,13 +1751,12 @@ necessary in the case of those distributions that do not have a hard
 cutoff mass; even for those that do, like the power-law model, it can
 be useful to define a ``soft'' cutoff in the event that the lower mass
 hard cutoff becomes an irrelevant parameter as discussed in Section
-\ref{sec:power-law}.)  \changed{For each mass distribution parameter
-  sample from our MCMC, we can calculate the distribution's minimum
-  black hole mass; the collection of these minimum black hole masses
-  approximates the distribution of minimum black hole masses implied
-  by the data in the context of that distribution.  Figure
-  \ref{fig:min-mass} plots histograms of the minimum black hole mass
-  samples.}
+\ref{sec:power-law}.)  For each mass distribution parameter sample
+from our MCMC, we can calculate the distribution's minimum black hole
+mass; the collection of these minimum black hole masses approximates
+the distribution of minimum black hole masses implied by the data in
+the context of that distribution.  Figure \ref{fig:min-mass} plots
+histograms of the minimum black hole mass samples.
 
 \begin{figure}
   \begin{center}
@@ -1781,19 +1772,19 @@ hard cutoff becomes an irrelevant parameter as discussed in Section
     black hole mass with a vertical line.}
 \end{figure}
 
-\changed{We find that the best-fit model for the low-mass systems (the
-  power-law) has $M_{1\%} > 4.3$ $\Msun$ in 90\% of the MCMC samples
-  (i.e.\ at 90\% confidence).  This is significantly above the maximum
-  theoretically-allowed neutron star mass, $\sim 3 \Msun$ (e.g.\
-  \citet{Kalogera1996}).  Hence we conclude that the low-mass systems
-  show strong evidence of a mass gap.
+We find that the best-fit model for the low-mass systems (the
+power-law) has $M_{1\%} > 4.3$ $\Msun$ in 90\% of the MCMC samples
+(i.e.\ at 90\% confidence).  This is significantly above the maximum
+theoretically-allowed neutron star mass, $\sim 3 \Msun$ (e.g.\
+\citet{Kalogera1996}).  Hence we conclude that the low-mass systems
+show strong evidence of a mass gap.
 
-  The distribution of minimum black hole masses for the analysis of
-  the complete sample (i.e.\ including the higher-mass systems) is
-  shown in Figure \ref{fig:high-min-mass}.  For the most favored
-  model, the exponential, we find that $M_{1\%} > 4.5$ $\Msun$ with
-  90\% confidence.  We therefore conclude that there is strong
-  evidence for a mass gap in the complete sample as well.}
+The distribution of minimum black hole masses for the analysis of the
+combined sample (i.e.\ including the higher-mass systems) is shown in
+Figure \ref{fig:high-min-mass}.  For the most favored model, the
+exponential, we find that $M_{1\%} > 4.5$ $\Msun$ with 90\%
+confidence.  We therefore conclude that there is strong evidence for a
+mass gap in the combined sample as well.
 
 \begin{figure}
 \begin{center}
@@ -1801,7 +1792,7 @@ hard cutoff becomes an irrelevant parameter as discussed in Section
   \end{center}
   \caption{\label{fig:high-min-mass} The distributions for the minimum
     black hole mass, $M_{1\%}$, calculated from the MCMC samples for
-    the models in Section \ref{sec:models} using the complete sample
+    the models in Section \ref{sec:models} using the combined sample
     of systems.  For the two most favored models, the exponential and
     two-Gaussian, the 90\% confidence limit on the minimum black hole
     mass is 4.5 $\Msun$ and 2.3 $\Msun$, respectively.  For every
@@ -1809,10 +1800,10 @@ hard cutoff becomes an irrelevant parameter as discussed in Section
     hole mass with a vertical line.}
 \end{figure}
 
-\changed{Table \ref{tab:mmin-quants} gives the 10\%, 50\% (median),
-  and 90\% quantiles for the minimum black hole mass implied by the
-  low-mass sample; Table \ref{tab:mmin-quants-high} gives the same,
-  but for the complete sample of systems.}
+Table \ref{tab:mmin-quants} gives the 10\%, 50\% (median), and 90\%
+quantiles for the minimum black hole mass implied by the low-mass
+sample; Table \ref{tab:mmin-quants-high} gives the same, but for the
+combined sample of systems.
 
 \begin{table}
   \begin{center}
@@ -1871,7 +1862,7 @@ hard cutoff becomes an irrelevant parameter as discussed in Section
       \hline
     \end{tabular}
   \end{center}
-  \caption{\label{tab:mmin-quants-high} The 10\%, 50\% (median), and 90\% quantiles for the distribution of minimum black hole masses (in units of $\Msun$) implied by the complete sample in the context of the various models for the black hole mass distribution.  The models are listed in order of preference from model selection (Section \ref{sec:high-mass-model-selection}, Figure \ref{fig:high-rj-evidence}, and Table \ref{tab:rj-high}). }
+  \caption{\label{tab:mmin-quants-high} The 10\%, 50\% (median), and 90\% quantiles for the distribution of minimum black hole masses (in units of $\Msun$) implied by the combined sample in the context of the various models for the black hole mass distribution.  The models are listed in order of preference from model selection (Section \ref{sec:high-mass-model-selection}, Figure \ref{fig:high-rj-evidence}, and Table \ref{tab:rj-high}). }
 \end{table}
 
 \section{Summary and Conclusion}
@@ -1887,11 +1878,11 @@ five parametric models and five non-parametric (histogram) models for
 the mass distribution.  For both sets of samples, we used reversible
 jump MCMCs (exploiting a new algorithm for efficient jump proposals in
 such calculations) to perform model selection on the suite of models.
-\changed{The consideration of a broad range of models and the
-  model-selection analysis, along with consideration of the full
-  posterior distribution on the minimum black hole mass significantly
-  expand earlier analyses of black hole mass measurements
-  \citep{Bailyn1998,Ozel2010}.}
+The consideration of a broad range of models and the model-selection
+analysis, along with consideration of the full posterior distribution
+on the minimum black hole mass, significantly expand earlier
+statistical analyses of black hole mass measurements
+\citep{Bailyn1998,Ozel2010}.
 
 For the low-mass systems, we found the limits on model parameters in
 Tables \ref{tab:low-mass-parametric} and
@@ -1902,61 +1893,62 @@ limits on the model parameters for the combined systems are given in
 Tables \ref{tab:high-mass-parametric} and
 \ref{tab:high-mass-non-parametric}.  Unlike the low-mass systems, the
 most favored model for the combined sample is the exponential model.
-\changed{This difference clearly indicates that the character of the
-  low mass X-ray binary systems differs from the higher-mass systems.}
+This difference indicates that the low-mass subsample is not
+consistent with being drawn from the distribution of the combined
+population.
 
 We found strong evidence for a mass gap between the most massive
 neutron stars and the least massive black holes.  For the low-mass
 systems, the most favored, power law model gives a black hole mass
 distribution whose 1\% quantile lies above $4.3 \Msun$ with 90\%
-confidence.  For the complete sample of systems, the most favored,
+confidence.  For the combined sample of systems, the most favored,
 exponential model gives a black hole mass distribution whose 1\%
-quantile lise above $4.5 \Msun$ with 90\% confidence.
-\changed{Although the study methodology was different, the existence
-  of a mass gap was pointed out first by \citet{Bailyn1998} and most
-  recently by \citet{Ozel2010} (who did not consider a power law
-  model, and applied the exponential model to the low-mass systems,
-  where it is strongly disfavored compared to the power-law model).}
+quantile lise above $4.5 \Msun$ with 90\% confidence.  Although the
+study methodology was different, the existence of a mass gap was
+pointed out first by \citet{Bailyn1998} and most recently by
+\citet{Ozel2010} (who did not consider a power law model, and applied
+both Gaussian and exponential models to the low-mass systems, where
+the exponential is strongly disfavored compared to our power-law
+model).
 
-\changed{Theoretical expectations for the black hole mass distribution
-  have been examined in \citet{Fryer2001}.  They considered results of
-  supernova explosion and fallback simulations \citep{Fryer1999}
-  applied to single star populations; they also included a heuristic
-  treatment of the possible effects of binary evolution on the black
-  hole mass distribution.  It is interesting that we find the
-  most-favored model for the complete sample to be an exponential, as
-  discussed by \citet{Fryer1999}.  On the other hand, we find the
-  most-favored model for the low-mass sample to be a power law, with
-  the exponential model strongly disfavored for this sample. In
-  agreement with \citet{Bailyn1998} and \citet{Ozel2010}, we too
-  conclude that both the low-mass and complete samples require the
-  presence of a gap in the 3--4 or 4.5 $\Msun$ range.
+Theoretical expectations for the black hole mass distribution have
+been examined in \citet{Fryer2001}.  They considered results of
+supernova explosion and fallback simulations \citep{Fryer1999} applied
+to single star populations; they also included a heuristic treatment
+of the possible effects of binary evolution on the black hole mass
+distribution.  It is interesting that we find the most-favored model
+for the combined sample to be an exponential, as discussed by
+\citet{Fryer2001}.  On the other hand, we find the most-favored model
+for the low-mass sample to be a power law, with the exponential model
+strongly disfavored for this sample. In agreement with
+\citet{Bailyn1998} and \citet{Ozel2010}, we too conclude that both the
+low-mass and combined samples require the presence of a gap between 3
+and 4--4.5 $\Msun$.
 
-  \citet{Fryer1999} discussed two possible causes of such a gap: (1) a
-  step-like dependence of supernova energy on progenitor mass or (2)
-  selection biases.  Current simulations of core collapse in massive
-  stars may shed light on the dependence of supernova energy on
-  progenitor mass.  Selection biases can occur because the X-ray
-  binaries with very low-mass black holes systems are more likely to
-  be persistently Roche-lobe overflowing, preventing dynamical mass
-  measurements.  \citet{Ozel2010} conclude that the presence of such
-  biases is not enough to account for the gap, arguing that the number
-  (26) of observed persistent X-ray sources not known to be neutron
-  stars is insufficient to populate the 2--5 $\Msun$ region of any
-  black hole mass distribution that rises toward low masses.
-  Population synthesis models incorporating sophisticated treatment of
-  binary evolution and transient behavior (e.g.\
-  \citet{Fragos2008,Fragos2009}) could help shed light on this
-  possibility.}
+\citet{Fryer1999} discussed two possible causes of such a gap: (1) a
+step-like dependence of supernova energy on progenitor mass or (2)
+selection biases.  Current simulations of core collapse in massive
+stars may shed light on the dependence of supernova energy on
+progenitor mass.  Selection biases can occur because the X-ray
+binaries with very low-mass black holes systems are more likely to be
+persistently Roche-lobe overflowing, preventing dynamical mass
+measurements.  \citet{Ozel2010} conclude that the presence of such
+biases is not enough to account for the gap, arguing that the number
+(26) of observed persistent X-ray sources not known to be neutron
+stars is insufficient to populate the 2--5 $\Msun$ region of any black
+hole mass distribution that rises toward low masses.  Population
+synthesis models incorporating sophisticated treatment of binary
+evolution and transient behavior (e.g.\ \citet{Fragos2008,Fragos2009})
+could help shed light on this possibility.
 
 \acknowledgements
 
-AC, LK, and CB are supported by NSF grant NSF/AST-0707627.  WMF, NS,
-and VK are supported by \fixme{XXX}.  IM acknowledges support from the
-NSF AAPF under award AST-0901985.  Calculations for this work were
-performed on the Northwestern Fugu cluster, which was partially funded
-by NSF MRI grant \fixme{XXX}.  We thank Jonathan Gair for helpful
-discussions.
+WMF, NS, and VK are supported by NSF grants CAREER AST-0449558 and
+AST–0908930.  AC, LK, and CB are supported by NSF grant
+NSF/AST-0707627.  .  IM acknowledges support from the NSF AAPF under
+award AST-0901985.  Calculations for this work were performed on the
+Northwestern Fugu cluster, which was partially funded by NSF MRI grant
+PHY-0619274.  We thank Jonathan Gair for helpful discussions.
 
 \appendix
 
